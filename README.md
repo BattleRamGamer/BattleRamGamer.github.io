@@ -1,7 +1,6 @@
 # Portfolio Bram Salomons
 
 
-
 ## Monster Matches [(Link to Game)](https://battleramgamer.itch.io/monster-matches)
 * 8 weeks
 * Group project (team of 7)
@@ -123,29 +122,52 @@ Calculating the influence of light
 
 
 
+![hi][test2]
 
 
+[test2]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png "hi"
 
 
+![ALT][test]
 
+![2alt](test)
 
+![3alt][bibi]
 
+![4alt](bibi)
 
-[bibi]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/Monster%20Matches/Bibi%20spin.png "Bibi rotating and spewing fire"
-[cloudy]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/Monster%20Matches/Cloudy%20platforms.png "Platforms blinking, disappearing and reappearing"
-[scaryMouse]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/Monster%20Matches/Scary%20mouse.png "Finite state machine"
+![5alt][.\Code samples/3D Rendering/Cam movement.png]
 
-[danger]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/Silent%20Protocol/Danger.png "Reusable class for anything that kills the player"
-[laserValues]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/Silent%20Protocol/Laser%20move%20values.png "Selectable values for what direction the speed counts towards"
-[laser]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/Silent%20Protocol/Laser%20move.png "Laser code"
-[loudnessCalc]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/Silent%20Protocol/Loudness%20calc.png "Checking how loud a sound is"
-[loudnessCheck]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/Silent%20Protocol/Loudness%20check.png "Checking if the monster can hear the sound"
-[path]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/Silent%20Protocol/Path.png "Reusable path holder"
+![6alt](Code%20samples/3D%20Rendering/Cam%20movement.png)
 
-[button]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/C%2B%2B/Clickable%20button.png "Clickable button"
-[homePage]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/C%2B%2B/Home%20page.png "Screenshot of the home page"
-[inGame]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/C%2B%2B/Ingame%20screenshot.png "Screenshot of gameplay"
-[randAttributes]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/C%2B%2B/Random%20attributes.png "Giving a character random stats"
+[test]: Code%20samples/3D%20Rendering/Cam%20movement.png
 
-[camMove]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/3D%20Rendering/Cam%20movement.png "Simple camera movement"
-[lightCalc]: https://github.com/BattleRamGamer/BattleRamGamer.github.io/blob/main/Code%20samples/3D%20Rendering/Light%20calc.png "Calculating the influence of light in shader"
+[bibi]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Monster%20Matches/Bibi%20spin.png "Bibi rotating and spewing fire"
+
+[cloudy]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Monster%20Matches/Cloudy%20platforms.png "Platforms blinking, disappearing and reappearing"
+
+[scaryMouse]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Monster%20Matches/Scary%20mouse.png "Finite state machine"
+
+[danger]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Danger.png "Reusable class for anything that kills the player"
+
+[laserValues]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Laser%20move%20values.png "Selectable values for what direction the speed counts towards"
+
+[laser]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Laser%20move.png "Laser code"
+
+[loudnessCalc]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Loudness%20calc.png "Checking how loud a sound is"
+
+[loudnessCheck]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Loudness%20check.png "Checking if the monster can hear the sound"
+
+[path]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Path.png "Reusable path holder"
+
+[button]:https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/C%2B%2B/Clickable%20button.png "Clickable button"
+
+[homePage]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/C%2B%2B/Home%20page.png "Screenshot of the home page"
+
+[inGame]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/C%2B%2B/Ingame%20screenshot.png "Screenshot of gameplay"
+
+[randAttributes]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/C%2B%2B/Random%20attributes.png "Giving a character random stats"
+
+[camMove]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png "Simple camera movement"
+
+[lightCalc]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Light%20calc.png "Calculating the influence of light in shader"
