@@ -113,10 +113,10 @@ The MGE is a very barebones game engine. It’s basically a small collection of 
 
 Simple camera rotation controls
 
-![alt text][Code%20samples/3D%20Rendering/Cam%20movement.png]
+![alt text][https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png]
  
 Calculating the influence of light (LIGHTCALC)
-![alt text][Code%20samples/3D%20Rendering/Cam%20movement.png]
+![alt text][https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png]
 
 </details>
 
