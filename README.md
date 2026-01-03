@@ -13,7 +13,7 @@ I collaborated with two designers, three artists and one other engineer. I mainl
 
 
 <details>
- <summary><h3>Code snippets</h3></summary>
+ <summary><h3  style="display:inline-block">Code snippets</h3></summary>
  
  <p>Core logic for blinking platforms in Cloudy’s minigame</p>
  <p> <IMG src="Code%20samples/Monster%20Matches/Cloudy%20platforms.png"  alt="Platforms blinking, disappearing and reappearing"/> </p>
