@@ -112,15 +112,18 @@ The MGE is a very barebones game engine. It’s basically a small collection of 
 <summary><h3>Code snippets</h3></summary>
 
 Simple camera rotation controls
-![alt text][camMove]
+
+![alt text][Code%20samples/3D%20Rendering/Cam%20movement.png]
  
-Calculating the influence of light
-![alt text][lightCalc]
+Calculating the influence of light (LIGHTCALC)
+![alt text][Code%20samples/3D%20Rendering/Cam%20movement.png]
 
 </details>
 
 
+___
 
+___
 
 ![hi][test2]
 
@@ -130,13 +133,13 @@ Calculating the influence of light
 
 ![ALT][test]
 
-![2alt](test)
+    ![2alt](test)
 
 ![3alt][bibi]
 
-![4alt](bibi)
+    ![4alt](bibi)
 
-![5alt][.\Code samples/3D Rendering/Cam movement.png]
+    ![5alt][.\Code samples/3D Rendering/Cam movement.png]
 
 ![6alt](Code%20samples/3D%20Rendering/Cam%20movement.png)
 
