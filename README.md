@@ -13,17 +13,16 @@ I collaborated with two designers, three artists and one other engineer. I mainl
 
 
 <details>
-
-<summary><h3>Code snippets</h3></summary>
-
-Core logic for blinking platforms in Cloudy’s minigame
-![alt text][cloudy]
-
-Bibi rotating and spewing fire in Bibi’s minigame
-![alt text][bibi]
-
-Mr. Scary Mouse uses a finite state machine for its core logic
-![alt text][scaryMouse]
+ <summary><h3>Code snippets</h3></summary>
+ 
+ <p>Core logic for blinking platforms in Cloudy’s minigame</p>
+ <p> <IMG src="Code%20samples/Monster%20Matches/Cloudy%20platforms.png"  alt="Platforms blinking, disappearing and reappearing"/> </p>
+ 
+ <p>Bibi rotating and spewing fire in Bibi’s minigame</p>
+ <p> <IMG src="Code%20samples/Monster%20Matches/Bibi%20spin.png"  alt="Bibi rotating and spewing fire"/> </p>
+ 
+ <p>Mr. Scary Mouse uses a finite state machine for its core logic</p>
+ <p> <IMG src="Code%20samples/Monster%20Matches/Scary%20mouse.png"  alt="Finite state machine"/> </p>
 
 </details>
 
@@ -41,25 +40,24 @@ My biggest takeaway from this project was realizing the importance of an MVP (mi
 
 
 <details>
-
-<summary><h3>Code snippets</h3></summary>
-
-When a sound is played, this checks how far away it can be heard
-![alt text][loudnessCalc] 
-
-Logic for distance checking
-![alt text][loudnessCheck]
-
  
-Reusable for anything with a path: used for monster path and lasers
-![alt text][path]
- 
-Reusable component that kills player upon contact
-![alt text][danger]
-  
-Multiple quick versions of the laser, which follows a set path and kills upon impact. Easy to playtest for fast iterations
-![alt text][laser]
-![alt text][laserValues]
+ <summary><h3>Code snippets</h3></summary>
+
+ <p>When a sound is played, this checks how far away it can be heard </p>
+ <p> <IMG src="Code%20samples/Silent%20Protocol/Loudness%20calc.png"  alt="Checking how loud a sound is"/> </p>
+
+ <p>Logic for distance checking</p>
+ <p> <IMG src="Code%20samples/Silent%20Protocol/Loudness%20check.png"  alt="Checking if the monster can hear the sound"/> </p>
+
+ <p>Reusable for anything with a path: used for monster path and lasers</p>
+ <p> <IMG src="Code%20samples/Silent%20Protocol/Path.png"  alt="Reusable path holder"/> </p>
+
+ <p>Reusable component that kills player upon contact</p>
+ <p> <IMG src="Code%20samples/Silent%20Protocol/Danger.png"  alt="Reusable class for anything that kills the player"/> </p>
+
+ <p>Multiple quick versions of the laser, which follows a set path and kills upon impact. Easy to playtest for fast iterations </p>
+ <p> <IMG src="Code%20samples/Silent%20Protocol/Laser%20move.png"  alt="Laser code"/> </p>
+ <p> <IMG src="Code%20samples/Silent%20Protocol/Laser%20move%20values.png"  alt="Selectable values for what direction the speed counts towards"/> </p>
 
 </details>
 
@@ -75,24 +73,20 @@ After getting familiar with C#, I learned to program with C++. The final assignm
 
 
 <details>
-
-<summary><h3>In-game screenshots</h3></summary>
-
-How the game looks
-![alt text][homePage]
-![alt text][inGame]
-
+ <summary><h3>In-game screenshots</h3></summary>
+ <p>How the game looks</p>
+ <p> <IMG src="Code%20samples/C%2B%2B/Home%20page.png"  alt="Screenshot of the home page"/> </p>
+ <p> <IMG src="Code%20samples/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
 </details>
+
 <details>
+ <summary><h3>Code snippets</h3></summary>
 
-<summary><h3>Code snippets</h3></summary>
+ <p>Generating an opponent with random stats</p>
+ <p> <IMG src="Code%20samples/C%2B%2B/Random%20attributes.png"  alt="Giving a character random stats"/> </p>
 
-Generating an opponent with random stats
-![alt text][randAttributes]
- 
-A (rectangular) button that’s clickable
-
-![alt text][button]
+ <p>A (rectangular) button that’s clickable</p>
+ <p> <IMG src="Code%20samples/C%2B%2B/Clickable%20button.png"  alt="Clickable button"/> </p>
 
 </details>
 
@@ -112,18 +106,10 @@ The MGE is a very barebones game engine. It’s basically a small collection of 
  <summary><h3>Code snippets</h3></summary>
  
  <p>Simple camera rotation controls</p>
- 
- <IMG src="Code%20samples/3D%20Rendering/Cam%20movement.png"  alt="image.png"/>
-    
-
-
- ![alt text][https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png]
+ <p> <IMG src="Code%20samples/3D%20Rendering/Cam%20movement.png"  alt="Simple camera movement"/> </p>
  
  <p>Calculating the influence of light (LIGHTCALC)</p>
- <p> <IMG src="https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Light%20calc.png"  alt="image.png"/> </p> 
- ![alt text][https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png]
-
- <IMG scr=[test2] alt="a"/>
+ <p> <IMG src="Code%20samples/3D%20Rendering/Light%20calc.png"  alt="Calculating the influence of light in shader"/> </p>
 
 </details>
 
@@ -151,6 +137,67 @@ ___
 ![6alt](Code%20samples/3D%20Rendering/Cam%20movement.png)
 
 [test]: Code%20samples/3D%20Rendering/Cam%20movement.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+[bibi]: <p> <IMG src="Code%20samples/Monster%20Matches/Bibi%20spin.png"  alt="Bibi rotating and spewing fire"/> </p>
+
+[cloudy]: <p> <IMG src="Code%20samples/Monster%20Matches/Cloudy%20platforms.png"  alt="Platforms blinking, disappearing and reappearing"/> </p>
+
+[scaryMouse]: <p> <IMG src="Code%20samples/Monster%20Matches/Scary%20mouse.png"  alt="Finite state machine"/> </p>
+
+[danger]: <p> <IMG src="Code%20samples/Silent%20Protocol/Danger.png"  alt="Reusable class for anything that kills the player"/> </p>
+
+[laserValues]: <p> <IMG src="Code%20samples/Silent%20Protocol/Laser%20move%20values.png"  alt="Selectable values for what direction the speed counts towards"/> </p>
+
+[laser]: <p> <IMG src="Code%20samples/Silent%20Protocol/Laser%20move.png"  alt="Laser code"/> </p>
+
+[loudnessCalc]: <p> <IMG src="Code%20samples/Silent%20Protocol/Loudness%20calc.png"  alt="Checking how loud a sound is"/> </p>
+
+[loudnessCheck]: <p> <IMG src="Code%20samples/Silent%20Protocol/Loudness%20check.png"  alt="Checking if the monster can hear the sound"/> </p>
+
+[path]: <p> <IMG src="Code%20samples/Silent%20Protocol/Path.png"  alt="Reusable path holder"/> </p>
+
+[button]:<p> <IMG src="Code%20samples/C%2B%2B/Clickable%20button.png"  alt="Clickable button"/> </p>
+
+[homePage]: <p> <IMG src="Code%20samples/C%2B%2B/Home%20page.png"  alt="Screenshot of the home page"/> </p>
+
+[inGame]: <p> <IMG src="Code%20samples/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
+
+[randAttributes]: <p> <IMG src="Code%20samples/C%2B%2B/Random%20attributes.png"  alt="Giving a character random stats"/> </p>
+
+[camMove]: <p> <IMG src="Code%20samples/3D%20Rendering/Cam%20movement.png"  alt="Simple camera movement"/> </p>
+
+[lightCalc]: <p> <IMG src="Code%20samples/3D%20Rendering/Light%20calc.png"  alt="Calculating the influence of light in shader"/> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 [bibi]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Monster%20Matches/Bibi%20spin.png "Bibi rotating and spewing fire"
 
