@@ -41,7 +41,7 @@ My biggest takeaway from this project was realizing the importance of an MVP (mi
 
 <details>
  
- <summary><h3>Code snippets</h3></summary>
+ <summary><h3  style="display:inline-block">Code snippets</h3></summary>
 
  <p>When a sound is played, this checks how far away it can be heard </p>
  <p> <IMG src="Code%20samples/Silent%20Protocol/Loudness%20calc.png"  alt="Checking how loud a sound is"/> </p>
@@ -73,14 +73,14 @@ After getting familiar with C#, I learned to program with C++. The final assignm
 
 
 <details>
- <summary><h3>In-game screenshots</h3></summary>
+ <summary><h3  style="display:inline-block">In-game screenshots</h3></summary>
  <p>How the game looks</p>
  <p> <IMG src="Code%20samples/C%2B%2B/Home%20page.png"  alt="Screenshot of the home page"/> </p>
  <p> <IMG src="Code%20samples/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
 </details>
 
 <details>
- <summary><h3>Code snippets</h3></summary>
+ <summary><h3  style="display:inline-block">Code snippets</h3></summary>
 
  <p>Generating an opponent with random stats</p>
  <p> <IMG src="Code%20samples/C%2B%2B/Random%20attributes.png"  alt="Giving a character random stats"/> </p>
@@ -103,7 +103,7 @@ The MGE is a very barebones game engine. It’s basically a small collection of 
 
 <details>
 
- <summary><h3>Code snippets</h3></summary>
+ <summary><h3  style="display:inline-block">Code snippets</h3></summary>
  
  <p>Simple camera rotation controls</p>
  <p> <IMG src="Code%20samples/3D%20Rendering/Cam%20movement.png"  alt="Simple camera movement"/> </p>
@@ -114,117 +114,3 @@ The MGE is a very barebones game engine. It’s basically a small collection of 
 </details>
 
 
-___
-
-___
-
-![hi][test2]
-
-
-[test2]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png "hi"
-
-
-![ALT][test]
-
-    ![2alt](test)
-
-![3alt][bibi]
-
-    ![4alt](bibi)
-
-    ![5alt][.\Code samples/3D Rendering/Cam movement.png]
-
-![6alt](Code%20samples/3D%20Rendering/Cam%20movement.png)
-
-[test]: Code%20samples/3D%20Rendering/Cam%20movement.png
-
-
-
-
-
-
-
-
-
-
-
-
-
-[bibi]: <p> <IMG src="Code%20samples/Monster%20Matches/Bibi%20spin.png"  alt="Bibi rotating and spewing fire"/> </p>
-
-[cloudy]: <p> <IMG src="Code%20samples/Monster%20Matches/Cloudy%20platforms.png"  alt="Platforms blinking, disappearing and reappearing"/> </p>
-
-[scaryMouse]: <p> <IMG src="Code%20samples/Monster%20Matches/Scary%20mouse.png"  alt="Finite state machine"/> </p>
-
-[danger]: <p> <IMG src="Code%20samples/Silent%20Protocol/Danger.png"  alt="Reusable class for anything that kills the player"/> </p>
-
-[laserValues]: <p> <IMG src="Code%20samples/Silent%20Protocol/Laser%20move%20values.png"  alt="Selectable values for what direction the speed counts towards"/> </p>
-
-[laser]: <p> <IMG src="Code%20samples/Silent%20Protocol/Laser%20move.png"  alt="Laser code"/> </p>
-
-[loudnessCalc]: <p> <IMG src="Code%20samples/Silent%20Protocol/Loudness%20calc.png"  alt="Checking how loud a sound is"/> </p>
-
-[loudnessCheck]: <p> <IMG src="Code%20samples/Silent%20Protocol/Loudness%20check.png"  alt="Checking if the monster can hear the sound"/> </p>
-
-[path]: <p> <IMG src="Code%20samples/Silent%20Protocol/Path.png"  alt="Reusable path holder"/> </p>
-
-[button]:<p> <IMG src="Code%20samples/C%2B%2B/Clickable%20button.png"  alt="Clickable button"/> </p>
-
-[homePage]: <p> <IMG src="Code%20samples/C%2B%2B/Home%20page.png"  alt="Screenshot of the home page"/> </p>
-
-[inGame]: <p> <IMG src="Code%20samples/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
-
-[randAttributes]: <p> <IMG src="Code%20samples/C%2B%2B/Random%20attributes.png"  alt="Giving a character random stats"/> </p>
-
-[camMove]: <p> <IMG src="Code%20samples/3D%20Rendering/Cam%20movement.png"  alt="Simple camera movement"/> </p>
-
-[lightCalc]: <p> <IMG src="Code%20samples/3D%20Rendering/Light%20calc.png"  alt="Calculating the influence of light in shader"/> </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[bibi]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Monster%20Matches/Bibi%20spin.png "Bibi rotating and spewing fire"
-
-[cloudy]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Monster%20Matches/Cloudy%20platforms.png "Platforms blinking, disappearing and reappearing"
-
-[scaryMouse]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Monster%20Matches/Scary%20mouse.png "Finite state machine"
-
-[danger]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Danger.png "Reusable class for anything that kills the player"
-
-[laserValues]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Laser%20move%20values.png "Selectable values for what direction the speed counts towards"
-
-[laser]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Laser%20move.png "Laser code"
-
-[loudnessCalc]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Loudness%20calc.png "Checking how loud a sound is"
-
-[loudnessCheck]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Loudness%20check.png "Checking if the monster can hear the sound"
-
-[path]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/Silent%20Protocol/Path.png "Reusable path holder"
-
-[button]:https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/C%2B%2B/Clickable%20button.png "Clickable button"
-
-[homePage]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/C%2B%2B/Home%20page.png "Screenshot of the home page"
-
-[inGame]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/C%2B%2B/Ingame%20screenshot.png "Screenshot of gameplay"
-
-[randAttributes]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/C%2B%2B/Random%20attributes.png "Giving a character random stats"
-
-[camMove]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png "Simple camera movement"
-
-[lightCalc]: https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Light%20calc.png "Calculating the influence of light in shader"
