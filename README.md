@@ -69,8 +69,9 @@ ___
 * C++ 
 * (no pre-made engine)
 
-After getting familiar with C#, I learned to program with C++. The final assignment was to make a small turn-based combat game (similar to Pokémon and Final Fantasy) using C++ and SFML. Starting from scratch, I programmed everything ranging from making something appear on screen to clickable buttons to the combat engine itself by completing weekly assignments.  
+After getting familiar with C#, I learned to program with C++. The final assignment was to make a small turn-based combat game (similar to Pokémon and Final Fantasy) using C++ and SFML. Starting from scratch, I programmed everything ranging from making something appear on screen to clickable buttons to the combat engine itself by completing weekly assignments.
 
+By the end of the module, I learned the basics of C++.
 
 <details>
  <summary><h3  style="display:inline-block">In-game screenshots</h3></summary>
@@ -95,11 +96,13 @@ ___
 ## 3D Rendering: Shaders, lighting and texturing basics
 * +- 6 weeks
 * Individual assignment
+* C++
 * MGE (Micro Game Engine)
 * OpenGL
 
-The MGE is a very barebones game engine. It’s basically a small collection of C++ classes of basic features to get us started with OpenGL. Using this, I programmed camera movement and (proper) shaders which react to light using ADS and are compatible with a height map and a splat map.
+The MGE is a very barebones game engine. It’s basically a small collection of C++ classes of basic features to get us started with OpenGL. Using this, I programmed camera movement and shaders which react to light using the ADS formula and are compatible with a height map and a splat map.
 
+By the end of this module, I learned how shaders work and how to program my own using C++ and OpenGL
 
 <details>
 
@@ -108,7 +111,7 @@ The MGE is a very barebones game engine. It’s basically a small collection of 
  <p>Simple camera rotation controls</p>
  <p> <IMG src="Code%20samples/3D%20Rendering/Cam%20movement.png"  alt="Simple camera movement"/> </p>
  
- <p>Calculating the influence of light (LIGHTCALC)</p>
+ <p>Calculating the influence of light in fragment shader</p>
  <p> <IMG src="Code%20samples/3D%20Rendering/Light%20calc.png"  alt="Calculating the influence of light in shader"/> </p>
 
 </details>
