@@ -107,19 +107,22 @@ ___
 The MGE is a very barebones game engine. It’s basically a small collection of C++ classes of basic features to get us started with OpenGL. Using this, I programmed camera movement and (proper) shaders which react to light using ADS and are compatible with a height map and a splat map.
 
 
-    <details>
-    <summary><h3>Code snippets</h3></summary>
-    
-    Simple camera rotation controls
-    
-    <IMG src="https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png"  alt="image.png"/>
-    
-    ![alt text][https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png]
+<details>
+
+ <summary><h3>Code snippets</h3></summary>
  
-    Calculating the influence of light (LIGHTCALC)
-    ![alt text][https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png]
+ Simple camera rotation controls
+ 
+ <IMG src="https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png"  alt="image.png"/>
     
-    </details>
+
+
+ ![alt text][https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png]
+ 
+ Calculating the influence of light (LIGHTCALC)
+ ![alt text][https://raw.githubusercontent.com/BattleRamGamer/BattleRamGamer.github.io/main/Code%20samples/3D%20Rendering/Cam%20movement.png]
+
+</details>
 
 
 ___
