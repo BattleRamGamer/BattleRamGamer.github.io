@@ -63,56 +63,30 @@ My biggest takeaway from this project was realizing the importance of an MVP (mi
 
 ___
 
-## C++: Turn-based combat game
-* +- 6 weeks
-* Individual assignment
-* C++ 
-* (no pre-made engine)
 
-After getting familiar with C#, I learned to program with C++. The final assignment was to make a small turn-based combat game (similar to Pokémon and Final Fantasy) using C++ and SFML. Starting from scratch, I programmed everything ranging from making something appear on screen to clickable buttons to the combat engine itself by completing weekly assignments.
+## Fading Colors [(Repository)](https://github.com/BattleRamGamer/ProjectCustomer)
+* 3 weeks
+* Group project (team of 7)
+* C#
+* Unity
 
-By the end of the module, I learned the basics of C++.
+Fading Colors is a serious game that aligns with the goals of the [Alzheimer's Association](https://www.alz.org/), and creates awareness for Alzheimer's. In this game, you play as an artist performing his daily routines while going through a cognitive decline. You perform tasks like making coffee, gathering inspiration and painting.
 
-<details>
- <summary><h3  style="display:inline-block">In-game screenshots</h3></summary>
- <p>How the game looks</p>
- <p> <IMG src="Code%20samples/C%2B%2B/Home%20page.png"  alt="Screenshot of the home page"/> </p>
- <p> <IMG src="Code%20samples/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
-</details>
-
-<details>
- <summary><h3  style="display:inline-block">Code snippets</h3></summary>
-
- <p>Generating an opponent with random stats</p>
- <p> <IMG src="Code%20samples/C%2B%2B/Random%20attributes.png"  alt="Giving a character random stats"/> </p>
-
- <p>A (rectangular) button that’s clickable</p>
- <p> <IMG src="Code%20samples/C%2B%2B/Clickable%20button.png"  alt="Clickable button"/> </p>
-
-</details>
-
-___
-
-## 3D Rendering: Shaders, lighting and texturing basics
-* +- 6 weeks
-* Individual assignment
-* C++
-* MGE (Micro Game Engine)
-* OpenGL
-
-The MGE is a very barebones game engine. It’s basically a small collection of C++ classes of basic features to get us started with OpenGL. Using this, I programmed camera movement and shaders which react to light using the ADS formula and are compatible with a height map and a splat map.
-
-By the end of this module, I learned how shaders work and how to program my own using C++ and OpenGL
+I mainly worked on programming the core mechanics like grabbing/placing items, interacting with objects and the flow of the game. This was the first game I made in Unity with a multidisciplinary team, which made me realize how easy it is to improve my skills and knowledge when I'm working on a similar task with someone else. In this case, I gained a lot of experience with handy tools in Unity and how to keep the project designer friendly.
 
 <details>
 
  <summary><h3  style="display:inline-block">Code snippets</h3></summary>
  
- <p>Simple camera rotation controls</p>
- <p> <IMG src="Code%20samples/3D%20Rendering/Cam%20movement.png"  alt="Simple camera movement"/> </p>
+ <p>When interacting with an object, this code checks if all requirements are met in order to complete the interaction</p>
+ <p> <IMG src="Code%20samples/Fading%20Colors/Requirements%20met.png"  alt="Simple camera movement"/> </p>
  
- <p>Calculating the influence of light in fragment shader</p>
- <p> <IMG src="Code%20samples/3D%20Rendering/Light%20calc.png"  alt="Calculating the influence of light in shader"/> </p>
+ <p>Code for an item you can grab. You can only place these items on predetermined locations, and this code handles dialogue, sound and other logic that happens when you grab or place it down</p>
+ <p> <IMG src="Code%20samples/Fading%20Colors/Placable%20item.png"  alt="Code for a placable item, checks state of where item is located and handles logic"/> </p>
+
+ <p>Example of organized parameters, allowing the game designer(s) to implement and change logic for interactions</p>
+ <p> <IMG src="Code%20samples/Fading%20Colors/Designer%20friendly%20parameters.png"  alt="Organized parameters for interactable"/> </p>
+ <p> <IMG src="Code%20samples/Fading%20Colors/Parameters in unity.png"  alt="Organized parameters for interactable, shown in Unity"/> </p>
 
 </details>
 
