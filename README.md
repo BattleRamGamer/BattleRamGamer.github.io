@@ -320,29 +320,136 @@ ___
 
 
 ## Fading Colors [(Repository)](https://github.com/BattleRamGamer/ProjectCustomer)
-* 3 weeks
-* Group project (team of 7)
-* C#
-* Unity
 
-Fading Colors is a serious game that aligns with the goals of the [Alzheimer's Association](https://www.alz.org/), and creates awareness for Alzheimer's. In this game, you play as an artist performing his daily routines while going through a cognitive decline. You perform tasks like making coffee, gathering inspiration and painting.
+Fading Colors is a serious game aligned with the goals of the [Alzheimer's Association](https://www.alz.org/) about the cognitive decline that comes with Alzheimer's. Your goal is to keep performing your daily routine, which keeps getting harder and more confusing to do as the cognitive decline worsens. Later you also play as a caregiver to simulate how you can help.
 
-I mainly worked on programming the core mechanics like grabbing/placing items, interacting with objects and the flow of the game. This was the first game I made in Unity with a multidisciplinary team, which made me realize how easy it is to improve my skills and knowledge when I'm working on a similar task with someone else. In this case, I gained a lot of experience with handy tools in Unity and how to keep the project designer friendly.
+#### Challenges
+This was the first game I made in Unity with a multidisciplinary team, so I had to get used to the whole Unity environment. My main task was everything related to interacting and item functionality. I followed a tutorial for a dialogue system, and I made the logic for requiring items to be placed on specific places.
+
+#### What did I learn
+I noticed how easy it is to improve my skills and knowledge when I'm working on a similar task with someone else, especially if they're more experienced that me. In this project, I gained a lot of experience with handy tools in Unity and how to keep the project designer friendly.
 
 <details>
+<summary><h3  style="display:inline-block">Code snippets</h3></summary>
 
- <summary><h3  style="display:inline-block">Code snippets</h3></summary>
- 
- <p>When interacting with an object, this code checks if all requirements are met in order to complete the interaction</p>
- <p> <IMG src="Code%20samples/Fading%20Colors/Requirements%20met.png"  alt="Simple camera movement"/> </p>
- 
- <p>Code for an item you can grab. You can only place these items on predetermined locations, and this code handles dialogue, sound and other logic that happens when you grab or place it down</p>
- <p> <IMG src="Code%20samples/Fading%20Colors/Placable%20item.png"  alt="Code for a placable item, checks state of where item is located and handles logic"/> </p>
+<details>
+<summary>Interaction requirement check</summary>
+<div markdown="1">
 
- <p>Example of organized parameters, allowing the game designer(s) to implement and change logic for interactions</p>
- <p> <IMG src="Code%20samples/Fading%20Colors/Designer%20friendly%20parameters.png"  alt="Organized parameters for interactable"/> </p>
- <p> <IMG src="Code%20samples/Fading%20Colors/Parameters in unity.png"  alt="Organized parameters for interactable, shown in Unity"/> </p>
+```csharp
+private bool RequirementsAreMet(string heldObjID, GameObject heldObj)
+{
+    if (isInteractedWith) return false;
+    if (!InteractionRequirementIsMet()) return false;
+    if (!IDLinkRequirementIsMet()) return false;
+
+    // Checking held object requirements
+    if (!string.IsNullOrEmpty(requiredHeldObjectID))
+    {
+        if (requiredHeldObjectID != heldObjID)
+        {
+            DialogueSystem.GetMainDialogueSystem().HandleText(missingHeldObjDialogue, dialogueTimer);
+            return false;
+        }
+        if (destroyHeldObj) Destroy(heldObj);
+    }
+
+    return true;
+}
+```
+</div>
+</details>
+
+<details>
+<summary>Grab item logic (dialogue, sound, etc.)</summary>
+<div markdown="1">
+
+```csharp
+public GameObject placedOnPlacable
+{
+    get
+    {
+        return PlacedOnPlacable;
+    }
+    set
+    {
+        if (value != null && value.TryGetComponent(out PlacerScript script))
+        {
+            PlaySound(placeSFX);
+            if (script.placerLinkIDs.Length > 0)
+            {
+                for (int i = 0; i < script.placerLinkIDs.Length; i++)
+                {
+                    if (script.placerLinkIDs[i] == objectID) isPlacedRight = true;
+                }
+            }
+        }
+        else
+        {
+            int nr = UnityEngine.Random.Range(0, grabSFX.Length);
+            AudioClip sound = grabSFX[nr];
+            Debug.Log("Playing grab sound " + nr);
+            PlaySound(sound);
+            isPlacedRight = false;
+            if (!dialogueHasPlayed && grabDialogue != "")
+            {
+                DialogueSystem.GetMainDialogueSystem().HandleText(grabDialogue, dialogueTime);
+                dialogueHasPlayed = true;
+            }
+        }
+        PlacedOnPlacable = value;
+    }
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Designer friendly organized parameters</summary>
+<div markdown="1">
+
+```csharp
+public class Interactable : MonoBehaviour
+{
+    public string interactableID = ""; // String identifier for tracking
+
+    [Header("Requirements")]
+    public string[] requiredIDLinks; // String array for required object links
+    public string[] requiredInteractions; // String array for required interactions
+    public string requiredHeldObjectID = ""; // String for required held object
+    public bool destroyHeldObj;
+
+    [Header("Dialogue")]
+    public float dialogueTimer = 2f;
+    public string interactionDialogue = "";
+    public string[] missingObjectDialogues;
+    public string[] missingInteractionDialogues;
+    public string missingHeldObjDialogue;
+
+    [Header("Object Spawning")]
+    public GameObject interactionSpawnsPrefab = null;
+    public Transform interactionSpawnPos = null;
+    public string giveObjectID = ""; // String for object ID
+    public float spawnTime = 2;
+    public bool selfDestruct;
+
+    [Header("Misc")]
+    public AudioClip interactionSFX = null;
+    AudioSource audioPlayer;
+
+    // Functions not included
+}
+```
+
+</div>
+<p> <IMG src="Code%20samples/Fading%20Colors/Parameters in unity.png"  alt="Organized parameters for interactable, shown in Unity"/> </p>
+</details>
 
 </details>
+
+
+
+
 
 
