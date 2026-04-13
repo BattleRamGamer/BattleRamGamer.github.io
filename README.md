@@ -13,10 +13,10 @@ I've been passionate about creating games for as long as I can remember. Back wh
 Monster Matches is a party game for up to 4 players. There are 4 minigames, each taking inspiration from a monster made by an elementary school pupil in group 4 (4th grade). This project was showcased in an [exhibition](https://www.bibliotheekenschede.nl/nieuws/monstersindebieb.html) by [the library](https://www.bibliotheekenschede.nl), who took part in [the monster project](https://www.themonsterproject.org).
 
 #### Challenges
-This project was longer than usual. We had set deadlines for doing playtests with our target audience
+This project lasted 9 weeks, which is the longest project I've worked on. I was mainly responsible for making the minigames. Our first playtest was already two weeks after receiving the assignment, and I managed to get three minigames ready for the playtest, including the hub and navigating to and from those minigames. I also made a reusable system for the minigame loop and scores. After the first playtest, I made the last minigame also playtestable, and after that we essentially had 5 weeks of adding nice to have features and polishing what we already had. The biggest features I made here are pause screen UI navigation and the sound system (with volume sliders).
 
 #### What did I learn
-I mainly got to experience what it's like to work on a game for 9 weeks
+I mainly got to experience what it's like to work on a game for 9 weeks with an amazing team of talented people. This project reminded me of why I love making games and showed me the positive effects of being able to playtest and iterate early
 
 <details>
 
@@ -28,7 +28,7 @@ I mainly got to experience what it's like to work on a game for 9 weeks
 
 <div markdown="1">
 
-```C#
+```csharp
 IEnumerator BlinkPlatformFor(float pSeconds)
 {
     // Determining values
@@ -70,7 +70,7 @@ IEnumerator BlinkPlatformFor(float pSeconds)
 
 <div markdown="1">
 
-```C#
+```csharp
 private void FixedUpdate()
 {
     if (!isActive) return;
@@ -114,7 +114,7 @@ void DoRotation()
 
 <div markdown="1">
 
-```C#
+```csharp
 private void FixedUpdate()
 {
     intensity = intensityCurve.Evaluate(MinigameManager.Instance.GetTimePercent());
