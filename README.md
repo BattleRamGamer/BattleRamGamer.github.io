@@ -4,21 +4,6 @@
 
 I've been passionate about creating games for as long as I can remember. Back when I was 4 years old, I suddenly thought how cool it'd be if I made the game I was playing at the moment. Not only I would have fun playing that game, but people all over the world could also have fun playing my game if I made games as a job. Now I'm studying CMGT as an engineer to make my dream job a reality, and I'm enjoying every moment of the process.
 
-<details>
-
-<summary>Tips for collapsed sections</summary>
-
-### You can add a header
-
-You can add text within a collapsed section.
-
-You can add an image or a code block, too.
-
-```ruby
-   puts "Hello World"
-```
-
-</details>
 
 # Portfolio
 
@@ -34,6 +19,8 @@ Monster Matches is a party game for up to 4 players. There are 4 minigames, each
 <details>
 
 <summary>Blinking Platform</summary>
+
+<div class="tip" markdown="1">Have **fun!**
 
 Text test
 
@@ -68,6 +55,7 @@ IEnumerator BlinkPlatformFor(float pSeconds)
 
 }
 ```
+</div>
 
 </details>
 
