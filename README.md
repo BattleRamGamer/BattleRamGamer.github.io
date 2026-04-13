@@ -19,13 +19,10 @@ This project lasted 9 weeks, which is the longest project I've worked on. I was 
 I mainly got to experience what it's like to work on a game for 9 weeks with an amazing team of talented people. This project reminded me of why I love making games and showed me the positive effects of being able to playtest and iterate early
 
 <details>
-
 <summary><h3  style="display:inline-block">Code snippets</h3></summary>
 
 <details>
-
-<summary>Blinking Platform</summary>
-
+<summary>Blinking Platform for Cloudy</summary>
 <div markdown="1">
 
 ```csharp
@@ -60,14 +57,10 @@ IEnumerator BlinkPlatformFor(float pSeconds)
 }
 ```
 </div>
-
 </details>
 
-
 <details>
-
-<summary>Bibi rotating</summary>
-
+<summary>Bibi rotating and turning around</summary>
 <div markdown="1">
 
 ```csharp
@@ -104,14 +97,10 @@ void DoRotation()
 ```
 
 </div>
-
 </details>
 
-
 <details>
-
-<summary>Finite state machine</summary>
-
+<summary>Finite state machine for Mr. Scary Mouse</summary>
 <div markdown="1">
 
 ```csharp
@@ -141,74 +130,191 @@ private void FixedUpdate()
 ```
 
 </div>
-
 </details>
 
 </details>
 
-
-
-
-
-## Monster Matches [(Link to Game)](https://battleramgamer.itch.io/monster-matches)
-* 8 weeks
-* Group project (team of 7)
-* C#
-* Unity
-
-This game was made in Unity in 9 weeks for a school project. For the assignment, we picked [the library](https://www.bibliotheekenschede.nl) as our external client, who participated in [the monster project](https://www.themonsterproject.org). In this scenario, they went to a primary school (International School Twente) and made a class of pupils in the 4th grade come up with and draw their own monster. Our job was to make an interactive product using those monsters, which the library would include in [their exhibition](https://www.bibliotheekenschede.nl/nieuws/monstersindebieb.html). My group decided to make a collection of minigames, with each minigame being themed around one of the monsters we picked. We chose to make the minigames simple and competitive to make sure the pupils would not only enjoy playing the minigame with their own monster, but also the minigames with other monsters. This means simple controls, simple concepts for minigames and (mostly) simple code.
-
-I collaborated with two designers, three artists and one other engineer. I mainly worked on programming the four minigames (including the podium that appears at the end), the sound system and the player's controls and physics. This project was a good way for me to experience what it’s like to work on a game in a team setting for longer than a month. 
-
-
-<details>
- <summary><h3  style="display:inline-block">Code snippets</h3></summary>
- 
- <p>Core logic for blinking platforms in Cloudy’s minigame</p>
- <p> <IMG src="Code%20samples/Monster%20Matches/Cloudy%20platforms.png"  alt="Platforms blinking, disappearing and reappearing"/> </p>
- 
- <p>Bibi rotating and spewing fire in Bibi’s minigame</p>
- <p> <IMG src="Code%20samples/Monster%20Matches/Bibi%20spin.png"  alt="Bibi rotating and spewing fire"/> </p>
- 
- <p>Mr. Scary Mouse uses a finite state machine for its core logic</p>
- <p> <IMG src="Code%20samples/Monster%20Matches/Scary%20mouse.png"  alt="Finite state machine"/> </p>
-
-</details>
 
 ___
 
 
 ## Silent Protocol [(Trailer)](https://youtu.be/mgys0usTa20) [(Walkthrough)](https://youtu.be/iB_7-jarEfg) 
-* 3 weeks
-* Group project (team of 6)
-* C#
-* Unity
 
-3-week long school project where the assignment was to make a (digital) product supported by mobile device features, like a camera or accelerometer. We ended up making a horror game, which you play on pc, connected through a server to a phone application. We sadly didn't publish this game due to the many steps involved in the setup and time constraints. We implemented an accelerometer and gyroscope, but I didn't work on that so that's irrelevant for now. I was mostly responsible for bug testing/QA and programming general gameplay elements like the monster's AI, interacting with objects and sound functionality.
-My biggest takeaway from this project was realizing the importance of an MVP (minimum viable product) because it makes fast iterations possible.
+#### Description
+Silent Protocol is a horror game that features a big ear-shaped monster that chases you if it can hear you. While you mainly play on PC, you also need to enter codes on your phone or physically move it to open doors and progress further in the game. 
 
+#### Challenges
+The two main things I worked on here are the pathfinding system and sound system. For the pathfinding system, I made waypoints that only knows where the next location is to allow multiple unique implementations of pathfinding. In this case, there's a laser that just moves directly to the next waypoint, and the monster AI makes use of Unity's built-in NavMeshAgent. The interesting part of the sound system gives each sound a range in which the monster can hear you (and will approach you).
+
+#### What did I learn
+Reusable assets are amazing. We sadly had to crunch main functionality in the last week to finish the game, which made me realize the importance of finishing an MVP (Minimum Viable Product) as soon as possible to allow fast iterations.
 
 <details>
- 
- <summary><h3  style="display:inline-block">Code snippets</h3></summary>
+<summary><h3  style="display:inline-block">Code snippets</h3></summary>
 
- <p>When a sound is played, this checks how far away it can be heard </p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Loudness%20calc.png"  alt="Checking how loud a sound is"/> </p>
+<details>
+<summary>Sound distance checking</summary>
+<div markdown="1">
 
- <p>Logic for distance checking</p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Loudness%20check.png"  alt="Checking if the monster can hear the sound"/> </p>
+```csharp
+public void CheckLoudness(string soundID)
+{
+    float range = 0;
+    //Debug.Log("Looking for " + soundID);
 
- <p>Reusable for anything with a path: used for monster path and lasers</p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Path.png"  alt="Reusable path holder"/> </p>
+    foreach (SoundLoudness sound in soundData)
+    {
+        //Debug.Log("Comparing with " + sound.sound.name);
+        if (sound.sound.name == soundID)
+        {
+            //Debug.Log("Name found!");
+            range = sound.radius;
+            break;
+        }
+    }
 
- <p>Reusable component that kills player upon contact</p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Danger.png"  alt="Reusable class for anything that kills the player"/> </p>
+    if (range <= 0)
+    {
+        //Debug.Log("Nothing was found, please check if the name is correct");
+        return;
+    }
 
- <p>Multiple quick versions of the laser, which follows a set path and kills upon impact. Easy to playtest for fast iterations </p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Laser%20move.png"  alt="Laser code"/> </p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Laser%20move%20values.png"  alt="Selectable values for what direction the speed counts towards"/> </p>
+    CheckMonsterDistance(range);
+}
+```
+
+```csharp
+private void CheckMonsterDistance(float soundRange)
+{
+    if (soundRange > currentVolume)
+    {
+        currentVolume = soundRange;
+    }
+    Vector3 playerPos = PlayerMovement.GetPlayer().transform.position;
+
+    float monsterDistance = Vector3.Distance(monster.transform.position, playerPos);
+
+    if (monsterDistance <= soundRange)
+    {
+        //Debug.Log("Approaching player");
+        monster.HearPlayer();
+    }
+    else
+    {
+        //Debug.Log("Distance is too big, not approaching player");
+    }
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Path waypoint logic</summary>
+<div markdown="1">
+
+```csharp
+public Transform GetFirstPoint()
+{
+    currentPointIndex = 0;
+    return pointLocations[0];
+}
+public Transform GetNextPoint()
+{
+    currentPointIndex++;
+    currentPointIndex %= numberOfPoints;
+    return pointLocations[currentPointIndex];
+}
+public Transform GetRandomPoint()
+{
+    // Avoiding getting the same location twice
+    int nextPoint = Random.Range(0, numberOfPoints - 1);
+    if (nextPoint == currentPointIndex) nextPoint++;
+    currentPointIndex = nextPoint;
+    return pointLocations[currentPointIndex];
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Reusable Danger component</summary>
+<div markdown="1">
+
+```csharp
+public class Danger : MonoBehaviour
+{
+    [SerializeField]
+    private string deathMessage;
+
+    [SerializeField]
+    private AudioClip deathSound;
+
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            DeathManager.GetMainManager().KillPlayer(deathMessage);
+            if (audioSource != null && deathSound != null)
+            {
+                audioSource.PlayOneShot(deathSound);
+            }
+        }
+    }
+
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Easy iteration for laser movement</summary>
+<div markdown="1">
+
+```csharp
+private enum ConsistentSpeedDirection
+{
+    X,
+    Z,
+    Foward
+}
+
+[SerializeField]
+private ConsistentSpeedDirection consistentSpeedDirection;
+
+private void FixedUpdate()
+{
+    float secretRealSpeed = speed / 100f;
+    Vector3 diff = currentDestination.position - transform.position;
+    diff.y = 0;
+
+    switch (consistentSpeedDirection)
+    {
+        case ConsistentSpeedDirection.X: MoveConsistentX(secretRealSpeed, diff);
+            break;
+        case ConsistentSpeedDirection.Z: MoveConsistentZ(secretRealSpeed, diff);
+            break;
+        case ConsistentSpeedDirection.Foward: MoveConsistentForward(secretRealSpeed, diff);
+            break;
+    }        
+
+}
+```
+
+</div>
+</details>
 
 </details>
+
 
 ___
 
