@@ -321,7 +321,7 @@ ___
 
 ## Fading Colors [(Repository)](https://github.com/BattleRamGamer/ProjectCustomer)
 
-Fading Colors is a serious game aligned with the goals of the [Alzheimer's Association](https://www.alz.org/) about the cognitive decline that comes with Alzheimer's. Your goal is to keep performing your daily routine, which keeps getting harder and more confusing to do as the cognitive decline worsens. Later you also play as a caregiver to simulate how you can help.
+Fading Colors is a serious game aligned with the goals of the [Alzheimer's Association](https://www.alz.org/) about the cognitive decline that comes with Alzheimer's. Your goal is to keep performing your daily routine as a retired painter, which keeps getting harder and more confusing to do as the cognitive decline worsens. Later you also play as a caregiver to simulate how you can help.
 
 #### Challenges
 This was the first game I made in Unity with a multidisciplinary team, so I had to get used to the whole Unity environment. My main task was everything related to interacting and item functionality. I followed a tutorial for a dialogue system, and I made the logic for requiring items to be placed on specific places.
