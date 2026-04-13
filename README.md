@@ -1,4 +1,102 @@
-# Portfolio Bram Salomons
+# Bram Salomons
+
+## Introduction
+
+I've been passionate about creating games for as long as I can remember. Back when I was 4 years old, I suddenly thought how cool it'd be if I made the game I was playing at the moment. Not only I would have fun playing that game, but people all over the world could also have fun playing my game if I made games as a job. Now I'm studying CMGT as an engineer to make my dream job a reality, and I'm enjoying every moment of the process.
+
+
+# Portfolio
+
+## Monster Matches [(Link to Game)](https://battleramgamer.itch.io/monster-matches)
+
+
+
+
+<details>
+<summary>Code snippets</summary>
+<details>
+<summary>Blinking Platform</summary>
+
+Text test
+```C#
+IEnumerator BlinkPlatformFor(float pSeconds)
+{
+    // Determining values
+    int count = fallCount.GetFallCount(round);
+    int[] selectedPlatforms = GetRandomPlatforms(count);
+    GameObject[] blinkingPlatforms = CreateBlinkPlatforms(count, selectedPlatforms);
+    float blinkStateDuration = pSeconds / blinkStateChangeAmount;
+
+    // Blinking
+    for (float i = pSeconds; i > 0.01; i -= blinkStateDuration)
+    {
+        SwitchBlinkState(blinkingPlatforms);
+        yield return new WaitForSeconds(blinkStateDuration);
+    }
+
+    // Platform gone
+    MakePlatformsDisappear(selectedPlatforms, blinkingPlatforms);
+    
+
+    // Time until next platform starts blinking
+    yield return new WaitForSeconds(platformDisappearTime);
+    MusicManager.Instance?.PlaySound(platformBackSound);
+
+    // Cooldown time between platforms returning and next round
+    yield return new WaitForSeconds(restTime);
+    OnNewRound?.Invoke();
+    StartRound();
+
+}
+```
+
+</details>
+<details>
+<summary>Bibi rotating</summary>
+
+Text 2est
+
+```C#
+private void FixedUpdate()
+{
+    if (!isActive) return;
+    if (rotatesClockwise)
+    {
+        forwardRotationMult = Mathf.Clamp(forwardRotationMult + reverseStrengthPerFrame, -1f, 1f);
+    }
+    else forwardRotationMult = Mathf.Clamp(forwardRotationMult - reverseStrengthPerFrame, -1f, 1f);
+    
+    firePivot.transform.localScale = new Vector3(1, 1, fireRetractCurve.Evaluate(Mathf.Abs(forwardRotationMult)));
+
+    DoRotation();
+}
+
+void DoRotation()
+{
+    // Get turn speed
+    currentTurnsPerSecond = rotationSpeed.Evaluate(MinigameManager.Instance.GetTimePercent());
+    currentDegreesPerFrame = TurnsPerSecToDegPerFrame(currentTurnsPerSecond);
+
+    // Take turning around in account
+    actualDegreesTurned = currentDegreesPerFrame * forwardRotationMult;
+
+    // Rotate and write down how much
+    transform.Rotate(new Vector3(0, actualDegreesTurned, 0));
+    totalDegreesTurned += actualDegreesTurned;
+    totalTurns = totalDegreesTurned / 360;
+
+    if (Mathf.Abs(totalDegreesTurned) >= currentTurnFrequency * 360) TurnAround();
+}
+```
+
+ <p>Bibi rotating and spewing fire in Bibi’s minigame</p>
+ <p> <IMG src="Code%20samples/Monster%20Matches/Bibi%20spin.png"  alt="Bibi rotating and spewing fire"/> </p>
+
+</details>
+</details>
+
+
+
 
 
 ## Monster Matches [(Link to Game)](https://battleramgamer.itch.io/monster-matches)
