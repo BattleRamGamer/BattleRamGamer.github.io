@@ -20,11 +20,10 @@ Monster Matches is a party game for up to 4 players. There are 4 minigames, each
 
 <summary>Blinking Platform</summary>
 
-<div class="tip" markdown="1">Have **fun!**
-
-Text test
+<div markdown="1">
 
 ```C#
+
 IEnumerator BlinkPlatformFor(float pSeconds)
 {
     // Determining values
@@ -63,7 +62,7 @@ IEnumerator BlinkPlatformFor(float pSeconds)
 
 <summary>Bibi rotating</summary>
 
-Text 2est
+<div class="tip" markdown="1">
 
 ```C#
 private void FixedUpdate()
@@ -98,10 +97,10 @@ void DoRotation()
 }
 ```
 
- <p>Bibi rotating and spewing fire in Bibi’s minigame</p>
- <p> <IMG src="Code%20samples/Monster%20Matches/Bibi%20spin.png"  alt="Bibi rotating and spewing fire"/> </p>
+</div>
 
 </details>
+
 </details>
 
 
