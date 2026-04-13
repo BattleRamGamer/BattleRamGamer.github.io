@@ -9,8 +9,14 @@ I've been passionate about creating games for as long as I can remember. Back wh
 
 ## Monster Matches [(Link to Game)](https://battleramgamer.itch.io/monster-matches)
 
+#### Description
 Monster Matches is a party game for up to 4 players. There are 4 minigames, each taking inspiration from a monster made by an elementary school pupil in group 4 (4th grade). This project was showcased in an [exhibition](https://www.bibliotheekenschede.nl/nieuws/monstersindebieb.html) by [the library](https://www.bibliotheekenschede.nl), who took part in [the monster project](https://www.themonsterproject.org).
 
+#### Challenges
+This project was longer than usual. We had set deadlines for doing playtests with our target audience
+
+#### What did I learn
+I mainly got to experience what it's like to work on a game for 9 weeks
 
 <details>
 
@@ -23,7 +29,6 @@ Monster Matches is a party game for up to 4 players. There are 4 minigames, each
 <div markdown="1">
 
 ```C#
-
 IEnumerator BlinkPlatformFor(float pSeconds)
 {
     // Determining values
@@ -58,11 +63,12 @@ IEnumerator BlinkPlatformFor(float pSeconds)
 
 </details>
 
+
 <details>
 
 <summary>Bibi rotating</summary>
 
-<div class="tip" markdown="1">
+<div markdown="1">
 
 ```C#
 private void FixedUpdate()
@@ -94,6 +100,43 @@ void DoRotation()
     totalTurns = totalDegreesTurned / 360;
 
     if (Mathf.Abs(totalDegreesTurned) >= currentTurnFrequency * 360) TurnAround();
+}
+```
+
+</div>
+
+</details>
+
+
+<details>
+
+<summary>Finite state machine</summary>
+
+<div markdown="1">
+
+```C#
+private void FixedUpdate()
+{
+    intensity = intensityCurve.Evaluate(MinigameManager.Instance.GetTimePercent());
+    switch (currentState)
+    {
+        case State.moving: Movement(); break;
+
+        case State.preparing: CheckPrepare(); break;
+
+        case State.cooldown: CheckCooldown(); break;
+
+        case State.pregame:
+            transform.position = Vector3.Lerp(lastLocation, newLocation, timer/2f);
+            break;
+
+        default:
+            timer = 0;
+            break;
+    }
+
+
+    timer += Time.fixedDeltaTime;
 }
 ```
 
