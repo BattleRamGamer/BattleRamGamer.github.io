@@ -19,6 +19,15 @@ This project lasted 9 weeks, which is the longest project I've worked on. I was 
 I mainly got to experience what it's like to work on a game for 9 weeks with an amazing team of talented people. This project reminded me of why I love making games and showed me the positive effects of being able to playtest and iterate early
 
 <details>
+ <summary><h3 style="display:inline-block">Gallery</h3></summary>
+ <p>Early version</p>
+ <p> <IMG src="Images/Monster Matches/EarlyPotato.png"  alt="Early gameplay screenshot featuring Potato"/> </p>
+ <p>Finished version</p>
+ <p> <IMG src="Images/Monster Matches/CurrentPotato.png"  alt="Current gameplay screenshot featuring Potato"/> </p>
+ <p> <IMG src="Images/Monster Matches/StartScreen.png"  alt="Starting screen"/> </p>
+</details>
+
+<details>
 <summary><h3  style="display:inline-block">Code snippets</h3></summary>
 
 <details>
@@ -151,8 +160,9 @@ Reusable assets are amazing. We sadly had to crunch main functionality in the la
 
 <details>
  <summary><h3 style="display:inline-block">Gallery</h3></summary>
- <p> <IMG src="Images/Silent%20Protocol/Reusable%20inspector.png"  alt="Gameplay screenshot"/> </p>
- <p>How the game looks</p>
+ <p>Gameplay</p>
+ <p> <IMG src="Images/Silent%20Protocol/Gameplay.png"  alt="Gameplay screenshot"/> </p>
+ <p>Reusable components</p>
  <p> <IMG src="Images/Silent Protocol/Reusable inspector.png"  alt="Unity inspector showing reusable components"/> </p>
 </details>
 
@@ -341,6 +351,8 @@ I noticed how easy it is to improve my skills and knowledge when I'm working on 
  <summary><h3 style="display:inline-block">Gallery</h3></summary>
 
  <p> <IMG src="https://github.com/user-attachments/assets/89a72c6a-284c-4660-a39a-6b38ed1523a3"  alt="Gameplay GIF"/> </p>
+ <p>Comparison between early and late</p>
+ <p> <IMG src="Images/Fading Colors/Worsening.png"  alt="Comparison between early game and late game"/> </p>
 
 </details>
 
