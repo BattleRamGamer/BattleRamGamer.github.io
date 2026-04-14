@@ -329,6 +329,15 @@ This was the first game I made in Unity with a multidisciplinary team, so I had 
 #### What did I learn
 I noticed how easy it is to improve my skills and knowledge when I'm working on a similar task with someone else, especially if they're more experienced that me. In this project, I gained a lot of experience with handy tools in Unity and how to keep the project designer friendly.
 
+
+<details>
+ <summary><h3>Gallery</h3></summary>
+ ![image29-ezgif com-optimize](https://github.com/user-attachments/assets/89a72c6a-284c-4660-a39a-6b38ed1523a3)
+ <p>How the game looks</p>
+ <p> <IMG src="https://github.com/user-attachments/assets/89a72c6a-284c-4660-a39a-6b38ed1523a3"  alt="Screenshot of the home page"/> </p>
+ <p> <IMG src="Code%20samples/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
+</details>
+
 <details>
 <summary><h3  style="display:inline-block">Code snippets</h3></summary>
 
