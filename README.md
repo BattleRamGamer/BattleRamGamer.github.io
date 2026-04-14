@@ -150,6 +150,13 @@ The two main things I worked on here are the pathfinding system and sound system
 Reusable assets are amazing. We sadly had to crunch main functionality in the last week to finish the game, which made me realize the importance of finishing an MVP (Minimum Viable Product) as soon as possible to allow fast iterations.
 
 <details>
+ <summary><h3 style="display:inline-block">Gallery</h3></summary>
+ <p> <IMG src="Images/Silent%20Protocol/Reusable%20inspector.png"  alt="Gameplay screenshot"/> </p>
+ <p>How the game looks</p>
+ <p> <IMG src="Images/Silent Protocol/Reusable inspector.png"  alt="Unity inspector showing reusable components"/> </p>
+</details>
+
+<details>
 <summary><h3  style="display:inline-block">Code snippets</h3></summary>
 
 <details>
@@ -333,7 +340,6 @@ I noticed how easy it is to improve my skills and knowledge when I'm working on 
 <details>
  <summary><h3 style="display:inline-block">Gallery</h3></summary>
 
- <p>How the game looks</p>
  <p> <IMG src="https://github.com/user-attachments/assets/89a72c6a-284c-4660-a39a-6b38ed1523a3"  alt="Gameplay GIF"/> </p>
 
 </details>
@@ -475,8 +481,8 @@ I learned how to use C++ and handle memory efficiently by using pointers and ref
 <details>
  <summary><h3 style="display:inline-block">Gallery</h3></summary>
  <p>How the game looks</p>
- <p> <IMG src="Code%20samples/C%2B%2B/Home%20page.png"  alt="Screenshot of the home page"/> </p>
- <p> <IMG src="Code%20samples/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
+ <p> <IMG src="Images/C%2B%2B/Home%20page.png"  alt="Screenshot of the home page"/> </p>
+ <p> <IMG src="Images/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
 </details>
 
 <details>
