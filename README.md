@@ -331,15 +331,15 @@ I noticed how easy it is to improve my skills and knowledge when I'm working on 
 
 
 <details>
- <summary><h3>Gallery</h3></summary>
- ![image29-ezgif com-optimize](https://github.com/user-attachments/assets/89a72c6a-284c-4660-a39a-6b38ed1523a3)
+ <summary><h3 style="display:inline-block">Gallery</h3></summary>
+
  <p>How the game looks</p>
- <p> <IMG src="https://github.com/user-attachments/assets/89a72c6a-284c-4660-a39a-6b38ed1523a3"  alt="Screenshot of the home page"/> </p>
- <p> <IMG src="Code%20samples/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
+ <p> <IMG src="https://github.com/user-attachments/assets/89a72c6a-284c-4660-a39a-6b38ed1523a3"  alt="Gameplay GIF"/> </p>
+
 </details>
 
 <details>
-<summary><h3  style="display:inline-block">Code snippets</h3></summary>
+<summary><h3 style="display:inline-block">Code snippets</h3></summary>
 
 <details>
 <summary>Interaction requirement check</summary>
@@ -473,7 +473,7 @@ I learned how to use C++ and handle memory efficiently by using pointers and ref
 
 
 <details>
- <summary><h3>Gallery</h3></summary>
+ <summary><h3 style="display:inline-block">Gallery</h3></summary>
  <p>How the game looks</p>
  <p> <IMG src="Code%20samples/C%2B%2B/Home%20page.png"  alt="Screenshot of the home page"/> </p>
  <p> <IMG src="Code%20samples/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
