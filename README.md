@@ -449,7 +449,147 @@ public class Interactable : MonoBehaviour
 </details>
 
 
+___
 
+
+## Turn-based combat in C++
+
+A small endless turn-based combat game that progressively gets harder at higher scores
+
+#### Challenges
+After getting familiar with C#, it was time to learn C++. I started with creating a simple text-based combat system and added new features every week like rendering text and images with SFML or a button you can click, and eventually made the full game.
+
+#### What did I learn
+I learned how to use C++ and handle memory efficiently by using pointers and references
+
+
+<details>
+ <summary><h3>Gallery</h3></summary>
+ <p>How the game looks</p>
+ <p> <IMG src="Code%20samples/C%2B%2B/Home%20page.png"  alt="Screenshot of the home page"/> </p>
+ <p> <IMG src="Code%20samples/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
+</details>
+
+<details>
+<summary><h3  style="display:inline-block">Code snippets</h3></summary>
+
+<details>
+<summary>Interaction requirement check</summary>
+<div markdown="1">
+
+```cpp
+void Character::GenerateNewCharacter(const int score, const int baseDistribution) {
+
+    int baseChance = 20;
+    int extraChance = 5 * (score / 3);
+    int extraPoint = rand() % 100 < (baseChance + extraChance) ? 1 : 0;
+    int totalDistribution = baseDistribution + extraPoint - 2;
+
+    strength = 1;
+    wits = 1;
+    agility = 0;
+
+    for (int i = 0; i < totalDistribution; i++) {
+        switch (rand() % 3) {
+        case 0:
+            strength++;
+            break;
+        case 1:
+            wits++;
+            break;
+        default:
+            agility++;
+            break;
+        }
+    }
+
+    health = strength * 3;
+    sanity = wits * 2;
+
+}
+```
+</div>
+</details>
+
+<details>
+<summary>Button</summary>
+<div markdown="1">
+
+```cpp
+bool Button::IsMouseOnButton(const sf::Vector2i mousePos) const {
+    
+    if (mousePos.x >= GetPos().x + 0 &&
+        mousePos.y >= GetPos().y + 0 &&
+        mousePos.x <= GetPos().x + shape.getSize().x &&
+        mousePos.y <= GetPos().y + shape.getSize().y) 
+    {
+        return true;
+    }
+
+    return false;
+}
+
+void Button::update() {
+
+    shape.setPosition(GetPos());
+	setText(textStr);
+    text.move(shape.getSize().x / 2, shape.getSize().y / 2);
+
+    sf::Vector2i mousePos;
+
+	// Detect if button is being pressed
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {
+        if (!pressed) {
+            mousePos = sf::Mouse::getPosition(window);
+            pressed = true;
+
+            if (IsMouseOnButton(mousePos)) onClick();
+        }
+    }
+    else {
+        pressed = false;
+    }
+
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Spawning new opponent</summary>
+<div markdown="1">
+
+```cpp
+bool GameManager::IsOpponentAlive() {
+
+	if (opponent->getHealth() > 0 && opponent->getSanity() > 0) return true;
+
+	AddText("Opponent died!");
+	AddText("");
+	score++;
+
+	NextOpponent();
+
+	return false;
+}
+
+void GameManager::NextOpponent() {
+
+	opponent->GenerateNewCharacter(score, 6);
+	enemySprite->setTexture(*getRandomTexture());
+
+	AddText("New opponent joined the battle");
+	AddText("");
+
+}
+```
+
+</div>
+</details>
+
+</details>
 
 
 
