@@ -1,6 +1,6 @@
-# Bram Salomons <a href="/CV/CV Bram Salomons.pdf">View CV</a>
+# Bram Salomons <a href="/CV/CV Bram Salomons.pdf" target="_blank">View CV</a>
 
-<a href="/CV/CV Bram Salomons.pdf">View CV</a>
+## <a href="/CV/CV Bram Salomons.pdf" download="download">View CV</a>
 
 ## Introduction
 
