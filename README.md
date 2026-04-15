@@ -1,4 +1,6 @@
-# Bram Salomons
+# Bram Salomons <a href="/CV/CV Bram Salomons.pdf">View CV</a>
+
+<a href="/CV/CV Bram Salomons.pdf">View CV</a>
 
 ## Introduction
 
