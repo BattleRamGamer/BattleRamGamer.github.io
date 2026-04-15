@@ -1,93 +1,624 @@
-# Portfolio Bram Salomons
+# Bram Salomons
 
+## <a href="/CV/CV Bram Salomons Public.pdf" download="download">Download CV</a>
+
+## Introduction
+
+I've been passionate about creating games for as long as I can remember. Back when I was 4 years old, I suddenly thought how cool it'd be if I made the game I was playing at the moment. Not only I would have fun playing that game, but people all over the world could also have fun playing my game if I made games as a job. Now I'm studying CMGT as an engineer to make my dream job a reality, and I'm enjoying every moment of the process.
+
+
+# Portfolio
 
 ## Monster Matches [(Link to Game)](https://battleramgamer.itch.io/monster-matches)
-* 8 weeks
-* Group project (team of 7)
-* C#
-* Unity
 
-This game was made in Unity in 9 weeks for a school project. For the assignment, we picked [the library](https://www.bibliotheekenschede.nl) as our external client, who participated in [the monster project](https://www.themonsterproject.org). In this scenario, they went to a primary school (International School Twente) and made a class of pupils in the 4th grade come up with and draw their own monster. Our job was to make an interactive product using those monsters, which the library would include in [their exhibition](https://www.bibliotheekenschede.nl/nieuws/monstersindebieb.html). My group decided to make a collection of minigames, with each minigame being themed around one of the monsters we picked. We chose to make the minigames simple and competitive to make sure the pupils would not only enjoy playing the minigame with their own monster, but also the minigames with other monsters. This means simple controls, simple concepts for minigames and (mostly) simple code.
+#### Description
+Monster Matches is a party game for up to 4 players. There are 4 minigames, each taking inspiration from a monster made by an elementary school pupil in group 4 (4th grade). This project was showcased in an [exhibition](https://www.bibliotheekenschede.nl/nieuws/monstersindebieb.html) by [the library](https://www.bibliotheekenschede.nl), who took part in [the monster project](https://www.themonsterproject.org).
 
-I collaborated with two designers, three artists and one other engineer. I mainly worked on programming the four minigames (including the podium that appears at the end), the sound system and the player's controls and physics. This project was a good way for me to experience what it’s like to work on a game in a team setting for longer than a month. 
+#### Challenges
+This project lasted 9 weeks, which is the longest project I've worked on. I was mainly responsible for making the minigames. Our first playtest was already two weeks after receiving the assignment, and I managed to get three minigames ready for the playtest, including the hub and navigating to and from those minigames. I also made a reusable system for the minigame loop and scores. After the first playtest, I made the last minigame also playtestable, and after that we essentially had 5 weeks of adding nice to have features and polishing what we already had. The biggest features I made here are pause screen UI navigation and the sound system (with volume sliders).
 
+#### What did I learn
+I mainly got to experience what it's like to work on a game for 9 weeks with an amazing team of talented people. This project reminded me of why I love making games and showed me the positive effects of being able to playtest and iterate early
 
 <details>
- <summary><h3  style="display:inline-block">Code snippets</h3></summary>
- 
- <p>Core logic for blinking platforms in Cloudy’s minigame</p>
- <p> <IMG src="Code%20samples/Monster%20Matches/Cloudy%20platforms.png"  alt="Platforms blinking, disappearing and reappearing"/> </p>
- 
- <p>Bibi rotating and spewing fire in Bibi’s minigame</p>
- <p> <IMG src="Code%20samples/Monster%20Matches/Bibi%20spin.png"  alt="Bibi rotating and spewing fire"/> </p>
- 
- <p>Mr. Scary Mouse uses a finite state machine for its core logic</p>
- <p> <IMG src="Code%20samples/Monster%20Matches/Scary%20mouse.png"  alt="Finite state machine"/> </p>
+ <summary><h3 style="display:inline-block">Gallery</h3></summary>
+ <p>Early version</p>
+ <p> <IMG src="Images/Monster Matches/EarlyPotato.png"  alt="Early gameplay screenshot featuring Potato"/> </p>
+ <p>Finished version</p>
+ <p> <IMG src="Images/Monster Matches/CurrentPotato.png"  alt="Current gameplay screenshot featuring Potato"/> </p>
+ <p> <IMG src="Images/Monster Matches/StartScreen.png"  alt="Starting screen"/> </p>
+</details>
+
+<details>
+<summary><h3  style="display:inline-block">Code snippets</h3></summary>
+
+<details>
+<summary>Blinking Platform for Cloudy</summary>
+<div markdown="1">
+
+```csharp
+IEnumerator BlinkPlatformFor(float pSeconds)
+{
+    // Determining values
+    int count = fallCount.GetFallCount(round);
+    int[] selectedPlatforms = GetRandomPlatforms(count);
+    GameObject[] blinkingPlatforms = CreateBlinkPlatforms(count, selectedPlatforms);
+    float blinkStateDuration = pSeconds / blinkStateChangeAmount;
+
+    // Blinking
+    for (float i = pSeconds; i > 0.01; i -= blinkStateDuration)
+    {
+        SwitchBlinkState(blinkingPlatforms);
+        yield return new WaitForSeconds(blinkStateDuration);
+    }
+
+    // Platform gone
+    MakePlatformsDisappear(selectedPlatforms, blinkingPlatforms);
+    
+
+    // Time until next platform starts blinking
+    yield return new WaitForSeconds(platformDisappearTime);
+    MusicManager.Instance?.PlaySound(platformBackSound);
+
+    // Cooldown time between platforms returning and next round
+    yield return new WaitForSeconds(restTime);
+    OnNewRound?.Invoke();
+    StartRound();
+
+}
+```
+</div>
+</details>
+
+<details>
+<summary>Bibi rotating and turning around</summary>
+<div markdown="1">
+
+```csharp
+private void FixedUpdate()
+{
+    if (!isActive) return;
+    if (rotatesClockwise)
+    {
+        forwardRotationMult = Mathf.Clamp(forwardRotationMult + reverseStrengthPerFrame, -1f, 1f);
+    }
+    else forwardRotationMult = Mathf.Clamp(forwardRotationMult - reverseStrengthPerFrame, -1f, 1f);
+    
+    firePivot.transform.localScale = new Vector3(1, 1, fireRetractCurve.Evaluate(Mathf.Abs(forwardRotationMult)));
+
+    DoRotation();
+}
+
+void DoRotation()
+{
+    // Get turn speed
+    currentTurnsPerSecond = rotationSpeed.Evaluate(MinigameManager.Instance.GetTimePercent());
+    currentDegreesPerFrame = TurnsPerSecToDegPerFrame(currentTurnsPerSecond);
+
+    // Take turning around in account
+    actualDegreesTurned = currentDegreesPerFrame * forwardRotationMult;
+
+    // Rotate and write down how much
+    transform.Rotate(new Vector3(0, actualDegreesTurned, 0));
+    totalDegreesTurned += actualDegreesTurned;
+    totalTurns = totalDegreesTurned / 360;
+
+    if (Mathf.Abs(totalDegreesTurned) >= currentTurnFrequency * 360) TurnAround();
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Finite state machine for Mr. Scary Mouse</summary>
+<div markdown="1">
+
+```csharp
+private void FixedUpdate()
+{
+    intensity = intensityCurve.Evaluate(MinigameManager.Instance.GetTimePercent());
+    switch (currentState)
+    {
+        case State.moving: Movement(); break;
+
+        case State.preparing: CheckPrepare(); break;
+
+        case State.cooldown: CheckCooldown(); break;
+
+        case State.pregame:
+            transform.position = Vector3.Lerp(lastLocation, newLocation, timer/2f);
+            break;
+
+        default:
+            timer = 0;
+            break;
+    }
+
+
+    timer += Time.fixedDeltaTime;
+}
+```
+
+</div>
+</details>
 
 </details>
+
 
 ___
 
 
 ## Silent Protocol [(Trailer)](https://youtu.be/mgys0usTa20) [(Walkthrough)](https://youtu.be/iB_7-jarEfg) 
-* 3 weeks
-* Group project (team of 6)
-* C#
-* Unity
 
-3-week long school project where the assignment was to make a (digital) product supported by mobile device features, like a camera or accelerometer. We ended up making a horror game, which you play on pc, connected through a server to a phone application. We sadly didn't publish this game due to the many steps involved in the setup and time constraints. We implemented an accelerometer and gyroscope, but I didn't work on that so that's irrelevant for now. I was mostly responsible for bug testing/QA and programming general gameplay elements like the monster's AI, interacting with objects and sound functionality.
-My biggest takeaway from this project was realizing the importance of an MVP (minimum viable product) because it makes fast iterations possible.
+#### Description
+Silent Protocol is a horror game that features a big ear-shaped monster that chases you if it can hear you. While you mainly play on PC, you also need to enter codes on your phone or physically move it to open doors and progress further in the game. 
 
+#### Challenges
+The two main things I worked on here are the pathfinding system and sound system. For the pathfinding system, I made waypoints that only knows where the next location is to allow multiple unique implementations of pathfinding. In this case, there's a laser that just moves directly to the next waypoint, and the monster AI makes use of Unity's built-in NavMeshAgent. The interesting part of the sound system gives each sound a range in which the monster can hear you (and will approach you).
+
+#### What did I learn
+Reusable assets are amazing. We sadly had to crunch main functionality in the last week to finish the game, which made me realize the importance of finishing an MVP (Minimum Viable Product) as soon as possible to allow fast iterations.
 
 <details>
- 
- <summary><h3  style="display:inline-block">Code snippets</h3></summary>
+ <summary><h3 style="display:inline-block">Gallery</h3></summary>
+ <p>Gameplay</p>
+ <p> <IMG src="Images/Silent%20Protocol/Gameplay.png"  alt="Gameplay screenshot"/> </p>
+ <p>Reusable components</p>
+ <p> <IMG src="Images/Silent Protocol/Reusable inspector.png"  alt="Unity inspector showing reusable components"/> </p>
+</details>
 
- <p>When a sound is played, this checks how far away it can be heard </p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Loudness%20calc.png"  alt="Checking how loud a sound is"/> </p>
+<details>
+<summary><h3  style="display:inline-block">Code snippets</h3></summary>
 
- <p>Logic for distance checking</p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Loudness%20check.png"  alt="Checking if the monster can hear the sound"/> </p>
+<details>
+<summary>Sound distance checking</summary>
+<div markdown="1">
 
- <p>Reusable for anything with a path: used for monster path and lasers</p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Path.png"  alt="Reusable path holder"/> </p>
+```csharp
+public void CheckLoudness(string soundID)
+{
+    float range = 0;
+    //Debug.Log("Looking for " + soundID);
 
- <p>Reusable component that kills player upon contact</p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Danger.png"  alt="Reusable class for anything that kills the player"/> </p>
+    foreach (SoundLoudness sound in soundData)
+    {
+        //Debug.Log("Comparing with " + sound.sound.name);
+        if (sound.sound.name == soundID)
+        {
+            //Debug.Log("Name found!");
+            range = sound.radius;
+            break;
+        }
+    }
 
- <p>Multiple quick versions of the laser, which follows a set path and kills upon impact. Easy to playtest for fast iterations </p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Laser%20move.png"  alt="Laser code"/> </p>
- <p> <IMG src="Code%20samples/Silent%20Protocol/Laser%20move%20values.png"  alt="Selectable values for what direction the speed counts towards"/> </p>
+    if (range <= 0)
+    {
+        //Debug.Log("Nothing was found, please check if the name is correct");
+        return;
+    }
+
+    CheckMonsterDistance(range);
+}
+```
+
+```csharp
+private void CheckMonsterDistance(float soundRange)
+{
+    if (soundRange > currentVolume)
+    {
+        currentVolume = soundRange;
+    }
+    Vector3 playerPos = PlayerMovement.GetPlayer().transform.position;
+
+    float monsterDistance = Vector3.Distance(monster.transform.position, playerPos);
+
+    if (monsterDistance <= soundRange)
+    {
+        //Debug.Log("Approaching player");
+        monster.HearPlayer();
+    }
+    else
+    {
+        //Debug.Log("Distance is too big, not approaching player");
+    }
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Path waypoint logic</summary>
+<div markdown="1">
+
+```csharp
+public Transform GetFirstPoint()
+{
+    currentPointIndex = 0;
+    return pointLocations[0];
+}
+public Transform GetNextPoint()
+{
+    currentPointIndex++;
+    currentPointIndex %= numberOfPoints;
+    return pointLocations[currentPointIndex];
+}
+public Transform GetRandomPoint()
+{
+    // Avoiding getting the same location twice
+    int nextPoint = Random.Range(0, numberOfPoints - 1);
+    if (nextPoint == currentPointIndex) nextPoint++;
+    currentPointIndex = nextPoint;
+    return pointLocations[currentPointIndex];
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Reusable Danger component</summary>
+<div markdown="1">
+
+```csharp
+public class Danger : MonoBehaviour
+{
+    [SerializeField]
+    private string deathMessage;
+
+    [SerializeField]
+    private AudioClip deathSound;
+
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            DeathManager.GetMainManager().KillPlayer(deathMessage);
+            if (audioSource != null && deathSound != null)
+            {
+                audioSource.PlayOneShot(deathSound);
+            }
+        }
+    }
+
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Easy iteration for laser movement</summary>
+<div markdown="1">
+
+```csharp
+private enum ConsistentSpeedDirection
+{
+    X,
+    Z,
+    Foward
+}
+
+[SerializeField]
+private ConsistentSpeedDirection consistentSpeedDirection;
+
+private void FixedUpdate()
+{
+    float secretRealSpeed = speed / 100f;
+    Vector3 diff = currentDestination.position - transform.position;
+    diff.y = 0;
+
+    switch (consistentSpeedDirection)
+    {
+        case ConsistentSpeedDirection.X: MoveConsistentX(secretRealSpeed, diff);
+            break;
+        case ConsistentSpeedDirection.Z: MoveConsistentZ(secretRealSpeed, diff);
+            break;
+        case ConsistentSpeedDirection.Foward: MoveConsistentForward(secretRealSpeed, diff);
+            break;
+    }        
+
+}
+```
+
+</div>
+</details>
 
 </details>
+
 
 ___
 
 
 ## Fading Colors [(Repository)](https://github.com/BattleRamGamer/ProjectCustomer)
-* 3 weeks
-* Group project (team of 7)
-* C#
-* Unity
 
-Fading Colors is a serious game that aligns with the goals of the [Alzheimer's Association](https://www.alz.org/), and creates awareness for Alzheimer's. In this game, you play as an artist performing his daily routines while going through a cognitive decline. You perform tasks like making coffee, gathering inspiration and painting.
+Fading Colors is a serious game aligned with the goals of the [Alzheimer's Association](https://www.alz.org/) about the cognitive decline that comes with Alzheimer's. Your goal is to keep performing your daily routine as a retired painter, which keeps getting harder and more confusing to do as the cognitive decline worsens. Later you also play as a caregiver to simulate how you can help.
 
-I mainly worked on programming the core mechanics like grabbing/placing items, interacting with objects and the flow of the game. This was the first game I made in Unity with a multidisciplinary team, which made me realize how easy it is to improve my skills and knowledge when I'm working on a similar task with someone else. In this case, I gained a lot of experience with handy tools in Unity and how to keep the project designer friendly.
+#### Challenges
+This was the first game I made in Unity with a multidisciplinary team, so I had to get used to the whole Unity environment. My main task was everything related to interacting and item functionality. I followed a tutorial for a dialogue system, and I made the logic for requiring items to be placed on specific places.
+
+#### What did I learn
+I noticed how easy it is to improve my skills and knowledge when I'm working on a similar task with someone else, especially if they're more experienced that me. In this project, I gained a lot of experience with handy tools in Unity and how to keep the project designer friendly.
+
 
 <details>
+ <summary><h3 style="display:inline-block">Gallery</h3></summary>
 
- <summary><h3  style="display:inline-block">Code snippets</h3></summary>
- 
- <p>When interacting with an object, this code checks if all requirements are met in order to complete the interaction</p>
- <p> <IMG src="Code%20samples/Fading%20Colors/Requirements%20met.png"  alt="Simple camera movement"/> </p>
- 
- <p>Code for an item you can grab. You can only place these items on predetermined locations, and this code handles dialogue, sound and other logic that happens when you grab or place it down</p>
- <p> <IMG src="Code%20samples/Fading%20Colors/Placable%20item.png"  alt="Code for a placable item, checks state of where item is located and handles logic"/> </p>
-
- <p>Example of organized parameters, allowing the game designer(s) to implement and change logic for interactions</p>
- <p> <IMG src="Code%20samples/Fading%20Colors/Designer%20friendly%20parameters.png"  alt="Organized parameters for interactable"/> </p>
- <p> <IMG src="Code%20samples/Fading%20Colors/Parameters in unity.png"  alt="Organized parameters for interactable, shown in Unity"/> </p>
+ <p> <IMG src="https://github.com/user-attachments/assets/89a72c6a-284c-4660-a39a-6b38ed1523a3"  alt="Gameplay GIF"/> </p>
+ <p>Comparison between early and late</p>
+ <p> <IMG src="Images/Fading Colors/Worsening.png"  alt="Comparison between early game and late game"/> </p>
 
 </details>
+
+<details>
+<summary><h3 style="display:inline-block">Code snippets</h3></summary>
+
+<details>
+<summary>Interaction requirement check</summary>
+<div markdown="1">
+
+```csharp
+private bool RequirementsAreMet(string heldObjID, GameObject heldObj)
+{
+    if (isInteractedWith) return false;
+    if (!InteractionRequirementIsMet()) return false;
+    if (!IDLinkRequirementIsMet()) return false;
+
+    // Checking held object requirements
+    if (!string.IsNullOrEmpty(requiredHeldObjectID))
+    {
+        if (requiredHeldObjectID != heldObjID)
+        {
+            DialogueSystem.GetMainDialogueSystem().HandleText(missingHeldObjDialogue, dialogueTimer);
+            return false;
+        }
+        if (destroyHeldObj) Destroy(heldObj);
+    }
+
+    return true;
+}
+```
+</div>
+</details>
+
+<details>
+<summary>Grab item logic (dialogue, sound, etc.)</summary>
+<div markdown="1">
+
+```csharp
+public GameObject placedOnPlacable
+{
+    get
+    {
+        return PlacedOnPlacable;
+    }
+    set
+    {
+        if (value != null && value.TryGetComponent(out PlacerScript script))
+        {
+            PlaySound(placeSFX);
+            if (script.placerLinkIDs.Length > 0)
+            {
+                for (int i = 0; i < script.placerLinkIDs.Length; i++)
+                {
+                    if (script.placerLinkIDs[i] == objectID) isPlacedRight = true;
+                }
+            }
+        }
+        else
+        {
+            int nr = UnityEngine.Random.Range(0, grabSFX.Length);
+            AudioClip sound = grabSFX[nr];
+            Debug.Log("Playing grab sound " + nr);
+            PlaySound(sound);
+            isPlacedRight = false;
+            if (!dialogueHasPlayed && grabDialogue != "")
+            {
+                DialogueSystem.GetMainDialogueSystem().HandleText(grabDialogue, dialogueTime);
+                dialogueHasPlayed = true;
+            }
+        }
+        PlacedOnPlacable = value;
+    }
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Designer friendly organized parameters</summary>
+<div markdown="1">
+
+```csharp
+public class Interactable : MonoBehaviour
+{
+    public string interactableID = ""; // String identifier for tracking
+
+    [Header("Requirements")]
+    public string[] requiredIDLinks; // String array for required object links
+    public string[] requiredInteractions; // String array for required interactions
+    public string requiredHeldObjectID = ""; // String for required held object
+    public bool destroyHeldObj;
+
+    [Header("Dialogue")]
+    public float dialogueTimer = 2f;
+    public string interactionDialogue = "";
+    public string[] missingObjectDialogues;
+    public string[] missingInteractionDialogues;
+    public string missingHeldObjDialogue;
+
+    [Header("Object Spawning")]
+    public GameObject interactionSpawnsPrefab = null;
+    public Transform interactionSpawnPos = null;
+    public string giveObjectID = ""; // String for object ID
+    public float spawnTime = 2;
+    public bool selfDestruct;
+
+    [Header("Misc")]
+    public AudioClip interactionSFX = null;
+    AudioSource audioPlayer;
+
+    // Functions not included
+}
+```
+
+</div>
+<p> <IMG src="Code%20samples/Fading%20Colors/Parameters in unity.png"  alt="Organized parameters for interactable, shown in Unity"/> </p>
+</details>
+
+</details>
+
+
+___
+
+
+## Turn-based combat in C++
+
+A small endless turn-based combat game that progressively gets harder at higher scores
+
+#### Challenges
+After getting familiar with C#, it was time to learn C++. I started with creating a simple text-based combat system and added new features every week like rendering text and images with SFML or a button you can click, and eventually made the full game.
+
+#### What did I learn
+I learned how to use C++ and handle memory efficiently by using pointers and references
+
+
+<details>
+ <summary><h3 style="display:inline-block">Gallery</h3></summary>
+ <p>How the game looks</p>
+ <p> <IMG src="Images/C%2B%2B/Home%20page.png"  alt="Screenshot of the home page"/> </p>
+ <p> <IMG src="Images/C%2B%2B/Ingame%20screenshot.png"  alt="Screenshot of gameplay"/> </p>
+</details>
+
+<details>
+<summary><h3  style="display:inline-block">Code snippets</h3></summary>
+
+<details>
+<summary>Interaction requirement check</summary>
+<div markdown="1">
+
+```cpp
+void Character::GenerateNewCharacter(const int score, const int baseDistribution) {
+
+    int baseChance = 20;
+    int extraChance = 5 * (score / 3);
+    int extraPoint = rand() % 100 < (baseChance + extraChance) ? 1 : 0;
+    int totalDistribution = baseDistribution + extraPoint - 2;
+
+    strength = 1;
+    wits = 1;
+    agility = 0;
+
+    for (int i = 0; i < totalDistribution; i++) {
+        switch (rand() % 3) {
+        case 0:
+            strength++;
+            break;
+        case 1:
+            wits++;
+            break;
+        default:
+            agility++;
+            break;
+        }
+    }
+
+    health = strength * 3;
+    sanity = wits * 2;
+
+}
+```
+</div>
+</details>
+
+<details>
+<summary>Button</summary>
+<div markdown="1">
+
+```cpp
+bool Button::IsMouseOnButton(const sf::Vector2i mousePos) const {
+    
+    if (mousePos.x >= GetPos().x + 0 &&
+        mousePos.y >= GetPos().y + 0 &&
+        mousePos.x <= GetPos().x + shape.getSize().x &&
+        mousePos.y <= GetPos().y + shape.getSize().y) 
+    {
+        return true;
+    }
+
+    return false;
+}
+
+void Button::update() {
+
+    shape.setPosition(GetPos());
+	setText(textStr);
+    text.move(shape.getSize().x / 2, shape.getSize().y / 2);
+
+    sf::Vector2i mousePos;
+
+	// Detect if button is being pressed
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {
+        if (!pressed) {
+            mousePos = sf::Mouse::getPosition(window);
+            pressed = true;
+
+            if (IsMouseOnButton(mousePos)) onClick();
+        }
+    }
+    else {
+        pressed = false;
+    }
+
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Spawning new opponent</summary>
+<div markdown="1">
+
+```cpp
+bool GameManager::IsOpponentAlive() {
+
+	if (opponent->getHealth() > 0 && opponent->getSanity() > 0) return true;
+
+	AddText("Opponent died!");
+	AddText("");
+	score++;
+
+	NextOpponent();
+
+	return false;
+}
+
+void GameManager::NextOpponent() {
+
+	opponent->GenerateNewCharacter(score, 6);
+	enemySprite->setTexture(*getRandomTexture());
+
+	AddText("New opponent joined the battle");
+	AddText("");
+
+}
+```
+
+</div>
+</details>
+
+</details>
+
 
 
