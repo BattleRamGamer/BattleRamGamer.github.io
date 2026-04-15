@@ -9,7 +9,9 @@ I've been passionate about creating games for as long as I can remember. Back wh
 
 # Portfolio
 
-## Monster Matches [(Link to Game)](https://battleramgamer.itch.io/monster-matches) <IMG src="Images/Monster Matches/Monster Matches Icon.png"  alt="Monster Matches Icon"/>
+<IMG src="Images/Monster Matches/Monster Matches Icon.png"  alt="Monster Matches Icon"/>
+
+## Monster Matches [(Link to Game)](https://battleramgamer.itch.io/monster-matches) 
 
 #### Description
 Monster Matches is a party game for up to 4 players. There are 4 minigames, each taking inspiration from a monster made by an elementary school pupil in group 4 (4th grade). This project was showcased in an [exhibition](https://www.bibliotheekenschede.nl/nieuws/monstersindebieb.html) by [the library](https://www.bibliotheekenschede.nl), who took part in [the monster project](https://www.themonsterproject.org).
@@ -148,8 +150,9 @@ private void FixedUpdate()
 
 ___
 
+<IMG src="Images/Silent Protocol/computer version of logo.png"  alt="Silent Protocol logo"/>
 
-## Silent Protocol [(Trailer)](https://youtu.be/mgys0usTa20) [(Walkthrough)](https://youtu.be/iB_7-jarEfg) <IMG src="Images/Silent Protocol/computer version of logo.png"  alt="Silent Protocol logo"/>
+## Silent Protocol [(Trailer)](https://youtu.be/mgys0usTa20) [(Walkthrough)](https://youtu.be/iB_7-jarEfg) 
 
 #### Description
 Silent Protocol is a horror game that features a big ear-shaped monster that chases you if it can hear you. While you mainly play on PC, you also need to enter codes on your phone or physically move it to open doors and progress further in the game. 
@@ -337,8 +340,9 @@ private void FixedUpdate()
 
 ___
 
+<IMG src="Images/Fading Colors/painting3.png"  alt="Fading Colors painting"/>
 
-## Fading Colors [(Repository)](https://github.com/BattleRamGamer/ProjectCustomer) <IMG src="Images/Fading Colors/painting3.png"  alt="Fading Colors painting"/>
+## Fading Colors [(Repository)](https://github.com/BattleRamGamer/ProjectCustomer) 
 
 Fading Colors is a serious game aligned with the goals of the [Alzheimer's Association](https://www.alz.org/) about the cognitive decline that comes with Alzheimer's. Your goal is to keep performing your daily routine as a retired painter, which keeps getting harder and more confusing to do as the cognitive decline worsens. Later you also play as a caregiver to simulate how you can help.
 
@@ -480,8 +484,9 @@ public class Interactable : MonoBehaviour
 
 ___
 
+<IMG src="Images/C++/blue.png"  alt="Turn-based combat game player"/>
 
-## Turn-based combat in C++ <IMG src="Images/C++/blue.png"  alt="Turn-based combat game player"/>
+## Turn-based combat in C++ 
 
 A small endless turn-based combat game that progressively gets harder at higher scores
 
