@@ -508,7 +508,7 @@ I learned how to use C++ and handle memory efficiently by using pointers and ref
 <summary><h3  style="display:inline-block">Code snippets</h3></summary>
 
 <details>
-<summary>Interaction requirement check</summary>
+<summary>Generating a new character</summary>
 <div markdown="1">
 
 ```cpp
@@ -592,7 +592,7 @@ void Button::update() {
 </details>
 
 <details>
-<summary>Spawning new opponent</summary>
+<summary>Check if new opponent needs to be spawned</summary>
 <div markdown="1">
 
 ```cpp
