@@ -674,7 +674,6 @@ class Collider : public GameObject {
 		Collider(float pX, float pY, float pRadius, bool pAabb);
 		~Collider();
 
-		// ADD VIRTUAL KEYWORD TO USE DOUBLE DISPATCH. LEAVE VIRTUAL OUT TO USE SWITCH
 		virtual bool checkCollision(Collider* pCollider) const;
 
 
