@@ -627,3 +627,217 @@ void GameManager::NextOpponent() {
 
 
 
+
+
+
+___
+
+## C++ Collision Detection (Work In Progress) [(Repository)](https://github.com/BattleRamGamer/AdvRendering) 
+
+This is made for a self-made collision detection system using AABBs (Axis Aligned Bounding Boxes) and Spheres. I used MGE (Micro Game Engine, a game engine provided by my teachers which only has things like rendering and managing update calls) as a base, and I'm planning to test performance for different implementations to see what works best.
+
+#### Challenges
+My focus is not detecting collisions for advanced shapes, but mainly creating a system that efficiently calls the collision checks. I've already made a working version that detects collisions and writes the data (how long each frame takes, how many checks are performed, collisions happening, etc.) to a file, and soon I'll finish up implementing spatial partitioning by following [a guide](https://gameprogrammingpatterns.com/spatial-partition.html), after which I'll create a variation I came up with myself. I'll measure peformance for all variations, put them in a graph and compare them to see which variations are better.
+
+#### What did I learn
+By the end, I'll have made my own collision detection system from scratch, made multiple variations of implementations (including a unique method I came up with myself) and researched which have better performance.
+
+
+<details>
+ <summary><h3 style="display:inline-block">Gallery</h3></summary>
+ <p>This is how the guide handles the spatial partitioning. It makes a grid of cells, puts each collider in a cell that correlates with its position and makes each collider check collision with the cell it's in and four surrounding cells</p>
+ <p> <IMG src="Images/CollisionDetection/Guide spatial partitioning.png"  alt="The way the guide handles spatial partitioning"/> </p>
+ <p>Below is a sketch of my variation on the spatial partitioning. The theory here is that, if all colliders are at most 1/3 the size of a cell, you can overlay three grids, each with an offset of 1/3 the size of a cell, and all colliders will always completely fit in at least one cell. Now a collider only needs to check collisions with its own cell and the four cells in the other grids that cell overlaps with</p>
+ <p> <IMG src="Images/CollisionDetection/Own spatial partitioning.png"  alt="My variation of spatial partitioning"/> </p>
+</details>
+
+<details>
+<summary><h3  style="display:inline-block">Code snippets</h3></summary>
+
+<details>
+<summary>Collider class</summary>
+<div markdown="1">
+
+```c++
+#ifndef COLLIDER_HPP
+#define COLLIDER_HPP
+
+#include "mge/core/GameObject.hpp"
+#include "mge/config.hpp"
+
+class AABB;
+class Sphere;
+
+class Collider : public GameObject {
+
+	public:
+		Collider(float pX, float pY, float pRadius, bool pAabb);
+		~Collider();
+
+		// ADD VIRTUAL KEYWORD TO USE DOUBLE DISPATCH. LEAVE VIRTUAL OUT TO USE SWITCH
+		virtual bool checkCollision(Collider* pCollider) const;
+
+
+		bool checkCircleCircleCollision(Collider* pCollider) const;
+		bool checkAABBCircleCollision(Collider* pCollider) const;
+		bool checkCircleAABBCollision(Collider* pCollider) const;
+		bool checkAABBAABBCollision(Collider* pCollider) const;
+
+		virtual bool checkCollision(AABB* pCollider) const;
+		virtual bool checkCollision(Sphere* pCollider) const;
+
+		float getRadius() const;
+		bool getIsAABB() const;
+	protected:
+		float radius;
+		bool isAABB;
+
+
+};
+
+#endif // COLLIDER_HPP
+
+```
+
+</div>
+</details>
+
+<details>
+<summary>Collider subclass to test double dispatch</summary>
+<div markdown="1">
+
+```c++
+#include "AABB.hpp"
+
+
+AABB::AABB(float pX, float pY, float pRadius) : Collider(pX, pY, pRadius, true){
+
+}
+AABB::~AABB() {
+	//dtor
+}
+
+
+bool AABB::checkCollision(Collider* pCollider) const {
+	if (!config::USE_DOUBLEDISPATCH) {
+		return Collider::checkCollision(pCollider);
+	}
+	return pCollider->checkCollision((AABB*)this);
+}
+
+
+bool AABB::checkCollision(AABB* pCollider) const {
+
+	return checkAABBAABBCollision((Collider*)pCollider);
+}
+
+bool AABB::checkCollision(Sphere* pCollider) const {
+
+	return checkAABBCircleCollision((Collider*)pCollider);
+
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>CollisionManager calling for collision checks</summary>
+<div markdown="1">
+
+```c++
+#include "CollisionManager.hpp"
+#include "mge/config.hpp"
+
+
+CollisionManager::CollisionManager() : testAmount(0) {
+
+}
+
+
+CollisionManager::~CollisionManager() {
+	delete(redMaterial);
+	delete(greenMaterial);
+}
+
+void CollisionManager::addCollider(Collider* pCollider) {
+	_colliders.push_back(pCollider);
+}
+
+void CollisionManager::removeCollider(Collider* pCollider) {
+	_colliders.push_back(pCollider);
+	_colliders.erase(std::remove(_colliders.begin(), _colliders.end(), pCollider));
+}
+
+int CollisionManager::checkCollisions() {
+	int total = 0;
+	testAmount = 0;
+
+	if (!config::USE_IGNOREHISTORY) {
+		total = checkCollisionsUnoptimized();
+	}
+	else {
+		total = checkCollisionsIgnoreHistory();
+	}
+
+
+	return total;
+}
+
+int CollisionManager::checkCollisionsUnoptimized() {
+	int total = 0;
+	for (int i = 0; i < _colliders.size(); i++) {
+		// If no collisions, this will stay until the end
+		_colliders[i]->setMaterial(redMaterial);
+		for (int j = 0; j < _colliders.size(); j++) {
+			if (i != j) {
+				testAmount++;
+				if (_colliders[i]->checkCollision(_colliders[j])) {
+					total++;
+					//_colliders[i]->setMaterial(mats[_colliders[i].colTotal]); or 
+					// If there's a collision, set to appropiate colour
+					_colliders[i]->setMaterial(greenMaterial);
+				}
+			}
+		}
+	}
+
+	return total;
+}
+
+int CollisionManager::checkCollisionsIgnoreHistory() {
+	for (int i = 0; i < _colliders.size(); i++) {
+		// If no collisions, this will stay until the end
+		_colliders[i]->setMaterial(redMaterial);
+	}
+
+	int total = 0;
+
+	for (int i = 0; i < _colliders.size(); i++) {
+		for (int j = i + 1; j < _colliders.size(); j++) {
+			if (i != j) {
+				testAmount++;
+				if (_colliders[i]->checkCollision(_colliders[j])) {
+					total++;
+					// If there's a collision, set to appropiate colour
+					_colliders[i]->setMaterial(greenMaterial);
+					_colliders[j]->setMaterial(greenMaterial);
+				}
+			}
+		}
+	}
+
+	return total;
+}
+
+int CollisionManager::getTestAmount() {
+	return testAmount;
+}
+```
+
+</div>
+</details>
+
+</details>
+
+
