@@ -342,7 +342,7 @@ ___
 
 <IMG src="Images/Fading Colors/painting3.png"  alt="Fading Colors painting"/>
 
-## Fading Colors [(Repository)](https://github.com/BattleRamGamer/ProjectCustomer) 
+## Fading Colors [(Repository)](https://github.com/BattleRamGamer/ProjectCustomer) [(Walkthrough)](https://youtu.be/Lh-41ElzN2I) 
 
 Fading Colors is a serious game aligned with the goals of the [Alzheimer's Association](https://www.alz.org/) about the cognitive decline that comes with Alzheimer's. Your goal is to keep performing your daily routine as a retired painter, which keeps getting harder and more confusing to do as the cognitive decline worsens. Later you also play as a caregiver to simulate how you can help.
 
@@ -486,7 +486,7 @@ ___
 
 <IMG src="Images/C++/blue.png"  alt="Turn-based combat game player"/>
 
-## Turn-based combat in C++ 
+## Turn-based combat in C++ [(Walkthrough)](https://youtu.be/dvS_ZTx8yX4) 
 
 A small endless turn-based combat game that progressively gets harder at higher scores
 
@@ -632,7 +632,7 @@ void GameManager::NextOpponent() {
 
 ___
 
-## C++ Collision Detection (Work In Progress) [(Repository)](https://github.com/BattleRamGamer/AdvRendering) 
+## C++ Collision Detection (Work In Progress) [(Repository)](https://github.com/BattleRamGamer/AdvRendering) [(Showcase)](https://youtu.be/NTtKeQkA39c)
 
 This is made for a self-made collision detection system using AABBs (Axis Aligned Bounding Boxes) and Spheres. I used MGE (Micro Game Engine, a game engine provided by my teachers which only has things like rendering and managing update calls) as a base, and I'm planning to test performance for different implementations to see what works best.
 
