@@ -13,6 +13,8 @@ I've been passionate about creating games for as long as I can remember. Back wh
 
 ## Monster Matches [(Link to Game)](https://battleramgamer.itch.io/monster-matches) [(Walkthrough)](https://youtu.be/m95To8_tVCA)
 
+{% include youtube.html id="m95To8_tVCA" %}
+
 #### Description
 Monster Matches is a party game for up to 4 players. There are 4 minigames, each taking inspiration from a monster made by an elementary school pupil in group 4 (4th grade). This project was showcased in an [exhibition](https://www.bibliotheekenschede.nl/nieuws/monstersindebieb.html) by [the library](https://www.bibliotheekenschede.nl), who took part in [the monster project](https://www.themonsterproject.org).
 
