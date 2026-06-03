@@ -156,6 +156,8 @@ ___
 
 ## Silent Protocol [(Trailer)](https://youtu.be/mgys0usTa20) [(Walkthrough)](https://youtu.be/iB_7-jarEfg) 
 
+{% include youtube.html id="iB_7-jarEfg" %}
+
 #### Description
 Silent Protocol is a horror game that features a big ear-shaped monster that chases you if it can hear you. While you mainly play on PC, you also need to enter codes on your phone or physically move it to open doors and progress further in the game. 
 
@@ -346,6 +348,9 @@ ___
 
 ## Fading Colors [(Repository)](https://github.com/BattleRamGamer/ProjectCustomer) [(Walkthrough)](https://youtu.be/Lh-41ElzN2I) 
 
+{% include youtube.html id="Lh-41ElzN2I" %}
+
+#### Description
 Fading Colors is a serious game aligned with the goals of the [Alzheimer's Association](https://www.alz.org/) about the cognitive decline that comes with Alzheimer's. Your goal is to keep performing your daily routine as a retired painter, which keeps getting harder and more confusing to do as the cognitive decline worsens. Later you also play as a caregiver to simulate how you can help.
 
 #### Challenges
@@ -490,6 +495,9 @@ ___
 
 ## Turn-based combat in C++ [(Walkthrough)](https://youtu.be/dvS_ZTx8yX4) 
 
+{% include youtube.html id="dvS_ZTx8yX4" %}
+
+#### Description
 A small endless turn-based combat game that progressively gets harder at higher scores
 
 #### Challenges
@@ -636,6 +644,9 @@ ___
 
 ## C++ Collision Detection (Work In Progress) [(Repository)](https://github.com/BattleRamGamer/AdvRendering) [(Showcase)](https://youtu.be/NTtKeQkA39c)
 
+{% include youtube.html id="NTtKeQkA39c" %}
+
+#### Description
 This is made for a self-made collision detection system using AABBs (Axis Aligned Bounding Boxes) and Spheres. I used MGE (Micro Game Engine, a game engine provided by my teachers which only has things like rendering and managing update calls) as a base, and I'm planning to test performance for different implementations to see what works best.
 
 #### Challenges
