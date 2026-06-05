@@ -33,7 +33,7 @@ I mainly got to experience what it's like to work on a game for 9 weeks with an 
 
  <p>Finished version</p>
  <p> <IMG src="Images/Monster Matches/CurrentPotato.png"  alt="Current gameplay screenshot featuring Potato"/> </p>
- <p> <IMG src="Images/Monster Matches/StartScreen.png"  alt="Starting screen"/> 
+ <p> <IMG src="Images/Monster Matches/StartScreen.png"  alt="Starting screen"/> </p>
 
 </details>
 
