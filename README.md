@@ -27,9 +27,9 @@ I mainly got to experience what it's like to work on a game for 9 weeks with an 
 <details>
  <summary><h3 style="display:inline-block">Gallery</h3></summary>
  <p>Early version</p>
-	<img width="1013" height="572" alt="BibiProgress" src="https://github.com/user-attachments/assets/f5b46bc8-ea39-4945-8405-83388fde1a7f" />
-	<img width="1017" height="578" alt="PotatoPrototype" src="https://github.com/user-attachments/assets/27ed7511-0631-41fb-be7a-894fb0b1a204" />
-	<img width="1021" height="572" alt="CloudyPlatformBlink" src="https://github.com/user-attachments/assets/25f58e96-ffbc-4e6c-862b-9880becfeb4a" />
+	<p> <img width="1013" height="572" alt="BibiProgress" src="https://github.com/user-attachments/assets/f5b46bc8-ea39-4945-8405-83388fde1a7f" /></p>
+	<p> <img width="1017" height="578" alt="PotatoPrototype" src="https://github.com/user-attachments/assets/27ed7511-0631-41fb-be7a-894fb0b1a204" /></p>
+	<p> <img width="1021" height="572" alt="CloudyPlatformBlink" src="https://github.com/user-attachments/assets/25f58e96-ffbc-4e6c-862b-9880becfeb4a" /></p>
 
  <p>Finished version</p>
  <p> <IMG src="Images/Monster Matches/CurrentPotato.png"  alt="Current gameplay screenshot featuring Potato"/> </p>
@@ -174,9 +174,9 @@ Reusable assets are amazing. We sadly had to crunch main functionality in the la
 <details>
  <summary><h3 style="display:inline-block">Gallery</h3></summary>
  <p>Early footage</p>
-	<img width="1018" height="489" alt="LaserVariations" src="https://github.com/user-attachments/assets/90a31024-f31d-499f-8b1e-1569c04a70f6" />
+	<p> <img width="1018" height="489" alt="LaserVariations" src="https://github.com/user-attachments/assets/90a31024-f31d-499f-8b1e-1569c04a70f6" /></p>
 
-<img width="973" height="329" alt="Dying" src="https://github.com/user-attachments/assets/323e0337-9910-454e-892e-681c5abb9915" />
+ <p> <img width="973" height="329" alt="Dying" src="https://github.com/user-attachments/assets/323e0337-9910-454e-892e-681c5abb9915" /></p>
 
  <p>Gameplay</p>
  <p> <IMG src="Images/Silent%20Protocol/Gameplay.png"  alt="Gameplay screenshot"/> </p>
@@ -373,7 +373,7 @@ I noticed how easy it is to improve my skills and knowledge when I'm working on 
  <summary><h3 style="display:inline-block">Gallery</h3></summary>
 
  <p>Early footage</p>
-<img width="985" height="454" alt="ItemPickupPlace" src="https://github.com/user-attachments/assets/5551e954-2ada-49b9-96d3-ad32cc9b2f61" />
+ <p> <img width="985" height="454" alt="ItemPickupPlace" src="https://github.com/user-attachments/assets/5551e954-2ada-49b9-96d3-ad32cc9b2f61" /></p>
 
  <p>Gameplay</p>
  <p> <IMG src="https://github.com/user-attachments/assets/89a72c6a-284c-4660-a39a-6b38ed1523a3"  alt="Gameplay GIF"/> </p>
