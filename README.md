@@ -27,10 +27,16 @@ I mainly got to experience what it's like to work on a game for 9 weeks with an 
 <details>
  <summary><h3 style="display:inline-block">Gallery</h3></summary>
  <p>Early version</p>
- <p> <IMG src="Images/Monster Matches/EarlyPotato.png"  alt="Early gameplay screenshot featuring Potato"/> </p>
+	<img width="1013" height="572" alt="BibiProgress" src="https://github.com/user-attachments/assets/f5b46bc8-ea39-4945-8405-83388fde1a7f" />
+
+https://github.com/user-attachments/assets/ddadd98a-888b-46fd-aa4d-a8df8029655c
+
+https://github.com/user-attachments/assets/9dc61fb0-f426-4783-a194-c1787fd51749
+
  <p>Finished version</p>
  <p> <IMG src="Images/Monster Matches/CurrentPotato.png"  alt="Current gameplay screenshot featuring Potato"/> </p>
- <p> <IMG src="Images/Monster Matches/StartScreen.png"  alt="Starting screen"/> </p>
+ <p> <IMG src="Images/Monster Matches/StartScreen.png"  alt="Starting screen"/> </p><img width="1013" height="572" alt="BibiProgress" src="https://github.com/user-attachments/assets/f5b46bc8-ea39-4945-8405-83388fde1a7f" />
+
 </details>
 
 <details>
@@ -169,6 +175,11 @@ Reusable assets are amazing. We sadly had to crunch main functionality in the la
 
 <details>
  <summary><h3 style="display:inline-block">Gallery</h3></summary>
+ <p>Early footage</p>
+	<img width="1527" height="734" alt="LaserVariations" src="https://github.com/user-attachments/assets/90a31024-f31d-499f-8b1e-1569c04a70f6" />
+
+https://github.com/user-attachments/assets/4274fabb-7502-4c09-9437-ceef8b102b1e
+
  <p>Gameplay</p>
  <p> <IMG src="Images/Silent%20Protocol/Gameplay.png"  alt="Gameplay screenshot"/> </p>
  <p>Reusable components</p>
@@ -363,6 +374,10 @@ I noticed how easy it is to improve my skills and knowledge when I'm working on 
 <details>
  <summary><h3 style="display:inline-block">Gallery</h3></summary>
 
+ <p>Early footage</p>
+<img width="1478" height="681" alt="ItemPickupPlace" src="https://github.com/user-attachments/assets/5551e954-2ada-49b9-96d3-ad32cc9b2f61" />
+
+ <p>Gameplay</p>
  <p> <IMG src="https://github.com/user-attachments/assets/89a72c6a-284c-4660-a39a-6b38ed1523a3"  alt="Gameplay GIF"/> </p>
  <p>Comparison between early and late</p>
  <p> <IMG src="Images/Fading Colors/Worsening.png"  alt="Comparison between early game and late game"/> </p>
